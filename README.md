@@ -2,6 +2,6 @@
 
 ### Equipa de desenvolvimento:
 
-Diogo Lourenço - Nº 106518
-Tiago Inácio   - Nº 110890
-Sérgio Silva   - Nº 111052
+##### Diogo Lourenço - Nº 106518
+##### Tiago Inácio   - Nº 110890
+##### Sérgio Silva   - Nº 111052
