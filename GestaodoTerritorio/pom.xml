@@ -32,6 +32,15 @@
 	</properties>
 	<dependencies>
 
+		<!-- Geopackage -->
+		<!-- https://mvnrepository.com/artifact/mil.nga.geopackage/geopackage -->
+		<dependency>
+			<groupId>mil.nga.geopackage</groupId>
+			<artifactId>geopackage</artifactId>
+			<version>6.6.5</version>
+		</dependency>
+
+
 		<!-- Apache Commons CSV -> para leitura e escrita de ficheiros .csv -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
