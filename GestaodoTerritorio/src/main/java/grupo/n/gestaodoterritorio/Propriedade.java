@@ -17,8 +17,6 @@ public class Propriedade {
     private MultiPolygon geometry;
     private int owner;
 
-    private static List<Propriedade> propriedades = new ArrayList<Propriedade>();
-
     public Propriedade(String objectId, String parId, String parNum, double shapeArea, MultiPolygon geometry, int owner) {
         this.objectId = objectId;
         this.parId = parId;
@@ -26,24 +24,6 @@ public class Propriedade {
         this.shapeArea = shapeArea;
         this.geometry = geometry;
         this.owner = owner;
-
-    }
-
-    public Propriedade(String file){
-
-        try (CSVReader csvReader = new CSVReader(new FileReader(file))) {
-            List<String[]> records = csvReader.readAll(); // Lê todos os parâmetros do ficheiro
-
-            for (String[] record : records) {
-                for (String field : record) {
-                    System.out.print(field + " | "); // Imprime cada campo do registo separado por "|"
-                }
-                System.out.println();
-            }
-
-        } catch (IOException | CsvException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
