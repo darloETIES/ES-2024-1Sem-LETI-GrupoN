@@ -31,6 +31,12 @@
 		<java.version>23</java.version>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.9</version>
+		</dependency>
 
 		<!-- Geopackage -->
 		<!-- https://mvnrepository.com/artifact/mil.nga.geopackage/geopackage -->
