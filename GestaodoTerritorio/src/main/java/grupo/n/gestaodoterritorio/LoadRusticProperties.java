@@ -61,7 +61,7 @@ public class LoadRusticProperties {
                 } catch (com.vividsolutions.jts.io.ParseException e) {
                     System.out.println("Erro ao ler " + objectId + ": " + e.getMessage());
                 }
-                System.out.println(Arrays.toString(record));
+                //System.out.println(Arrays.toString(record));
                 Propriedade propriedade = new Propriedade(objectId, parId, parNum, shapeLength, shapeArea, geometry, owner);
                 propriedades.add(propriedade);
             }

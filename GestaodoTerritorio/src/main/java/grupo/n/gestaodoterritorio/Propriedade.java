@@ -33,10 +33,14 @@ public class Propriedade {
         return geometry;
     }
     public boolean isAdjacentTo(Propriedade other) {
-        // Check if two geometries actually touch
-        System.out.println(this.geometry.touches(other.getGeometry()));  // This should print true or false
 
-        return this.geometry.touches(other.getGeometry());  // Verifica se são adjacentes
+        if(this.geometry.touches(other.getGeometry())){
+            System.out.println(this.geometry.touches(other.getGeometry()) + " | Propriedade " + this.objectId + " é adjacente a: Propriedade " + other.objectId);
+        }
+        else{
+            System.out.println(this.geometry.touches(other.getGeometry()));  //escreve true ou false (caso seja adjacente ou nao)
+        }
+        return this.geometry.touches(other.getGeometry());
     }
 
 
