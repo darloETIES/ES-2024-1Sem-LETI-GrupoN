@@ -39,18 +39,14 @@
 		</dependency>
 
 
+
+
+
 		<!-- https://mvnrepository.com/artifact/org.jgrapht/jgrapht-core -->
 		<dependency>
 			<groupId>org.jgrapht</groupId>
 			<artifactId>jgrapht-core</artifactId>
 			<version>1.5.2</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
-		<dependency>
-			<groupId>com.opencsv</groupId>
-			<artifactId>opencsv</artifactId>
-			<version>5.9</version>
 		</dependency>
 
 		<!-- Geopackage -->
@@ -63,11 +59,13 @@
 
 
 		<!-- Apache Commons CSV -> para leitura e escrita de ficheiros .csv -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
 			<version>1.12.0</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -82,11 +80,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
