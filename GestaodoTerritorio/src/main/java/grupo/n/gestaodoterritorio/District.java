@@ -3,7 +3,7 @@ package grupo.n.gestaodoterritorio;
 import java.util.*;
 
 public class District{
-    protected String districtName; //protected para poder ser usado por classes derivadas
+    private String districtName; //protected para poder ser usado por classes derivadas
     private List<County> counties;
 
     public District(String districtName) {

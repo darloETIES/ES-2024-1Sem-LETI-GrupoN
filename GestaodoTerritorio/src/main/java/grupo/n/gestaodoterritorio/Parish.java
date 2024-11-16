@@ -12,7 +12,7 @@ public class Parish extends County {
     }
 
     public String getCountyName() {
-        return super.countyName;
+        return super.getCountyName();
     }
     public String getParishName() {
         return parishName;

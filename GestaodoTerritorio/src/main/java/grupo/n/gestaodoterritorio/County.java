@@ -6,7 +6,7 @@ import java.util.List;
 public class County extends District {
     //count(y/ies) - concelho(s)
     //parish(es) - freguesia(s)
-    protected String countyName;
+    private String countyName;
     private List<Parish> parishes;
 
     public County(String districtName, String countyName) {
@@ -15,7 +15,8 @@ public class County extends District {
         this.parishes = new ArrayList<Parish>();
     }
     public String getDistrict() {
-        return districtName;
+
+        return getDistrictName();
     }
 
     public String getCountyName() {
