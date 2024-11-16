@@ -66,16 +66,17 @@ public class PropertiesLoader {
             Geometry geometry = reader.read(wkt);
 
             String owner = record.get("OWNER");
-
+            //acrescimo dos campos freguesia, concelho e ilha, nova versao no moodle
+            String parish = record.get("Freguesia");
+            String county = record.get("Municipio");
+            String district = record.get("Ilha");
             //Instacia uma nova propriedade
-            Property property = new Property(objectID, parID, parNumAsString, shapeLength, shapeArea, geometry, owner);
+            Property property = new Property(objectID, parID, parNumAsString, shapeLength, shapeArea, geometry, owner, parish, county, district);
             properties.put(objectID, property);
 
             System.out.println(property);
 
-            //TEMPORARIO!!!! faz iterações até determinada propriedade (dado um erro de formatação no excel)
-            if(objectID.equals("9322"))
-                break;
+
         }
 
         return properties;
