@@ -10,14 +10,16 @@ import org.springframework.stereotype.Component;
 import java.io.FileReader;
 import java.util.*;
 
-@Component
+
 public class PropertiesLoader {
 
     private String file;
+    private List<Property> propertiesList;
 
     /*Construtor para leitura do ficheiro CSV*/
     public PropertiesLoader(String file) {
         this.file = file;
+        this.propertiesList = new ArrayList<>();
     }
 
     public Map<String, Property> readProperties() throws Exception /*Exception para que verifique se o caminho do ficheiro*/ {
@@ -72,6 +74,7 @@ public class PropertiesLoader {
             String district = record.get("Ilha");
             //Instacia uma nova propriedade
             Property property = new Property(objectID, parID, parNumAsString, shapeLength, shapeArea, geometry, owner, parish, county, district);
+            propertiesList.add(property);
             properties.put(objectID, property);
 
             System.out.println(property);
@@ -80,6 +83,25 @@ public class PropertiesLoader {
         }
 
         return properties;
+    }
+    public double averageAreaProp(String parish, String county, String district) {
+        double totalArea = 0;
+        int count = 0;
+
+        for (Property property : propertiesList) {
+            boolean matchesParish = property.getParish().equals(parish);
+            boolean matchesCounty =  property.getCounty().equals(county);
+            boolean matchesDistrict = property.getDistrict().equals(district);
+
+            if (matchesParish && matchesCounty && matchesDistrict) {
+                totalArea += property.getShapeArea();
+                count++;
+            }
+        }
+return totalArea / count;
+
+
+
     }
 
 
