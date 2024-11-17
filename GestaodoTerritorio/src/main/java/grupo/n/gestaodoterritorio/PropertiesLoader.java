@@ -98,7 +98,7 @@ public class PropertiesLoader {
                 count++;
             }
         }
-return totalArea / count;
+        return totalArea / count;
 
 
 

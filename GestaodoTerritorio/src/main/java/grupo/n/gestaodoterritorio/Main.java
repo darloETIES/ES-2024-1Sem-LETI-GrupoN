@@ -15,12 +15,18 @@ public class Main {
             //ler os dados do CSV
             PropertiesLoader ploader = new PropertiesLoader(file);
             Map<String, Property> properties = ploader.readProperties();
-            double v = ploader.averageAreaProp("Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
-            System.out.println("here is the averageArea of a proprotie given the parish,county and district :" + v);
+
             //Criacao do grafo
             Graph graph = new Graph();
             graph.createGraph(properties);
             graph.printGraphStats();
+
+            //Calculo da area geografica selecionada pelo utilizador
+            String parish = "Arco da Calheta";
+            String county = "Calheta";
+            String district = "Ilha da Madeira (Madeira)";
+            double averageAreaProp = ploader.averageAreaProp(parish, county, district);
+            System.out.println("Average Area from " + parish + ", " + county + ", " + district + " -> " + averageAreaProp);
 
         } catch (Exception e){
             e.printStackTrace();

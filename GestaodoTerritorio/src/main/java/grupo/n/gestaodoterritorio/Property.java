@@ -106,6 +106,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return "ObjectID: " + objectId + " | ParID: " + parId + " | ParNum: " + parNum + " Owner: " + owner + " Parish: " + parish + "County: " + county + "District: " + district;
+        return "ObjectID: " + objectId + " | ParID: " + parId + " | ParNum: " + parNum + " | Owner: " + owner + " | Parish: " + parish + " | County: " + county + " | District: " + district;
     }
 }
