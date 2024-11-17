@@ -79,10 +79,6 @@ public class PropertiesLoader {
 
             System.out.println(property);
 
-
-            //TEMPORARIO - para testes
-            if(property.getObjectId().equals("1001"))
-                break;
         }
 
         return properties;
