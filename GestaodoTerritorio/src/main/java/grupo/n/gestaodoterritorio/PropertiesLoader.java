@@ -80,7 +80,9 @@ public class PropertiesLoader {
             System.out.println(property);
 
 
-
+            //TEMPORARIO - para testes
+            if(property.getObjectId().equals("1001"))
+                break;
         }
 
         return properties;
@@ -99,6 +101,12 @@ public class PropertiesLoader {
                 count++;
             }
         }
+
+        // Verifica se count é maior que 0 para evitar divisão por zero (mas no caso de ser 0, entra na condição)
+        if (count == 0) {
+            return 0; // Caso não haja propriedades que satisfaçam os critérios
+        }
+
         return totalArea / count;
 
 
