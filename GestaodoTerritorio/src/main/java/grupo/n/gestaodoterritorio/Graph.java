@@ -20,6 +20,8 @@ public class Graph {
 
     /* Constrói o grafo a partir do mapa de propriedades lido do ficheiro CSV em Properties Loader */
     public void createGraph(Map<String, Property> properties) {
+
+        System.out.println("\nCreating graph:");
         //Adiciona os nós (propiedades)
         for (Property property : properties.values()) {
             graph.addVertex(property);
@@ -28,18 +30,18 @@ public class Graph {
         //Adiciona as arestas (vizinhança/adjacencias)
         for(Property p1 : properties.values()) {
             for(Property p2 : properties.values()) {
-                //Certifica-se que são propriedades diferentes
-                if(!p1.getObjectId().equals(p2.getObjectId())) {
-                    //Guarda em objetos Geometry os dados do parametro geometry de cada propriedade
+                if (!p1.getObjectId().equals(p2.getObjectId())) {
                     Geometry g1 = p1.getGeometry();
                     Geometry g2 = p2.getGeometry();
-
-                    //Comparamos geometry das duas propriedades (intersetam-se?)
-                    if(g1.intersects(g2))
-                        graph.addEdge(p1, p2); //no caso de intersetarem, cria a vizinhança
+                    boolean intersects = g1.intersects(g2);
+                    if (intersects) {
+                        System.out.println("Comparing " + p1.getObjectId() + " and " + p2.getObjectId() + ": " + intersects);
+                        graph.addEdge(p1, p2);
+                    }
                 }
             }
         }
+
     }
 
     public void printGraphStats() {
