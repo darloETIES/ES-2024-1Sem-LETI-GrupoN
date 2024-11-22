@@ -18,7 +18,7 @@ public class Main {
 
             //Criacao do grafo
             Graph graph = new Graph();
-            graph.createGraph(properties);
+            graph.createGraphOwners(properties);
             graph.printGraphStats();
 
             //Calculo da area geografica selecionada pelo utilizador
