@@ -1,7 +1,7 @@
 package grupo.n.gestaodoterritorio;
 
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.MultiPolygon;
+
 
 public class Property {
     private String objectId;

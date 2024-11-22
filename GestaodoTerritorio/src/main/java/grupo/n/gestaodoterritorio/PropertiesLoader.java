@@ -1,17 +1,18 @@
 package grupo.n.gestaodoterritorio;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.io.WKTReader;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.stereotype.Component;
 
 import java.io.FileReader;
 import java.util.*;
 
 
 public class PropertiesLoader {
+
 
     private String file;
     private List<Property> propertiesList;
@@ -20,6 +21,14 @@ public class PropertiesLoader {
     public PropertiesLoader(String file) {
         this.file = file;
         this.propertiesList = new ArrayList<>();
+    }
+
+    public List<Property> getProperties() {
+        return propertiesList;
+    }
+
+    public String getFile() {
+        return file;
     }
 
     public Map<String, Property> readProperties() throws Exception /*Exception para que verifique se o caminho do ficheiro*/ {
@@ -108,6 +117,4 @@ public class PropertiesLoader {
 
 
     }
-
-
 }

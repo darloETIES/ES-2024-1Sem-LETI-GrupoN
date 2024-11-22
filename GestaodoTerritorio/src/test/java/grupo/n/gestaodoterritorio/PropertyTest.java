@@ -31,7 +31,7 @@ class PropertyTest {
         assertInstanceOf(MultiPolygon.class, geometry);
 
         //Criação do objeto Property
-            p = new Property("1", "7343148.0", "2996240000000", 57.2469341921808, 202.05981432070362, geometry, "93", "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
+        p = new Property("1", "7343148.0", "2996240000000", 57.2469341921808, 202.05981432070362, geometry, "93", "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
 
     }
 
