@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Graph {
-    /*Grafo que armazena:
+    /**Grafo que armazena:
     * - Property, como vertices (nós)
     * - DefaultEdge, como arestas (adjacências)*/
     private SimpleGraph<Property, DefaultEdge> graph;
@@ -18,7 +18,7 @@ public class Graph {
         this.graph = new SimpleGraph<>(DefaultEdge.class);
     }
 
-    /* Constrói o grafo a partir do mapa de propriedades lido do ficheiro CSV em Properties Loader */
+    /** Constrói o grafo a partir do mapa de propriedades lido do ficheiro CSV em Properties Loader */
     public void createGraph(Map<String, Property> properties) {
 
         System.out.println("\nCreating graph:");
@@ -44,12 +44,19 @@ public class Graph {
 
     }
 
+    /**
+     * Informações sobre o grafo
+     */
     public void printGraphStats() {
         System.out.println("Sobre o Grafo:");
         System.out.println("- " + graph.vertexSet().size() + " nós (propriedades)");
         System.out.println("- " + graph.edgeSet().size() + " arestas (vizinhancas)");
     }
 
+    /**
+     * Obter grafo
+     * @return
+     */
     public SimpleGraph<Property, DefaultEdge> getGraph() {
         return graph;
     }
