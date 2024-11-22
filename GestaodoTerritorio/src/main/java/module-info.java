@@ -10,9 +10,8 @@ module grupo.n.gestaodoterritorio {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires jts.core;
-    requires com.fasterxml.jackson.databind;
-    requires org.apache.commons.csv;
     requires org.jgrapht.core;
+    requires org.apache.commons.csv;
 
     opens grupo.n.gestaodoterritorio to javafx.fxml;
     exports grupo.n.gestaodoterritorio;

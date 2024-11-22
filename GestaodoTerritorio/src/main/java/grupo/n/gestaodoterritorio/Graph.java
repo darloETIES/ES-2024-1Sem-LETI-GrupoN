@@ -2,8 +2,10 @@ package grupo.n.gestaodoterritorio;
 
 import com.vividsolutions.jts.geom.Geometry;
 import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
+import java.util.List;
 import java.util.Map;
 
 public class Graph {

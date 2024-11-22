@@ -4,41 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="302542c1-c82b-4a98-935d-0e02e2d6abb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/grupo/n/gestaodoterritorio/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.mvn/jvm.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/.mvn/maven.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/src/main/java/iscteiul/ista/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/src/site/site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Ficha_3/HelloJSON/src/test/java/iscteiul/ista/AppTest.java" afterDir="false" />
+    <list default="true" id="54d5d5d9-063c-476e-b15e-cc02a79f2550" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ES-2024-1Sem-LETI-GrupoN.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/grupo/n/gestaodoterritorio/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/grupo/n/gestaodoterritorio/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/grupo/n/gestaodoterritorio/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -48,23 +54,77 @@
     </option>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
+  "customColor": "",
+  "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2pDRqqIZKusZpl11voYLmP115Mo" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2pDYgFBrGRKuvcP8Gi2KcNQ3QRB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.grupo.n.gestaodoterritorio in GestaodoTerritorio.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "gui__diogo",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="grupo.n.gestaodoterritorio" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.grupo.n.gestaodoterritorio in GestaodoTerritorio">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.Main" />
+      <module name="GestaodoTerritorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="grupo.n.gestaodoterritorio in GestaodoTerritorio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.grupo.n.gestaodoterritorio in GestaodoTerritorio" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -76,16 +136,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="302542c1-c82b-4a98-935d-0e02e2d6abb9" name="Changes" comment="" />
-      <created>1732298857675</created>
+      <changelist id="54d5d5d9-063c-476e-b15e-cc02a79f2550" name="Changes" comment="" />
+      <created>1732302226194</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732298857675</updated>
-      <workItem from="1732298858716" duration="287000" />
+      <updated>1732302226194</updated>
+      <workItem from="1732302227232" duration="651000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GestaodoTerritorio$grupo_n_gestaodoterritorio_in_GestaodoTerritorio.ic" NAME="grupo.n.gestaodoterritorio in GestaodoTerritorio Coverage Results" MODIFIED="1732302865180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
+    </SUITE>
   </component>
 </project>
