@@ -1,0 +1,60 @@
+
+.window-bar{
+    -fx-background-color: #202121;
+    -fx-border-radius: 50px;
+}
+
+.close-btn{
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-border-radius: 30px;
+    -fx-transition: 0.5s ease;
+}
+
+.close-btn:hover{
+    -fx-border-color: #b53030;
+    -fx-background-color: #b53030;
+
+}
+
+.left-menu {
+    -fx-transition: all 0.5s ease-out;
+    -fx-background-color: #202121;
+    -fx-pref-width: 45px;
+    -fx-border-radius: 30px;
+    -fx-padding: 0;
+    -fx-background-clip: padding-box;
+    -fx-background-insets: 0;
+}
+
+.left-menu:hover {
+    -fx-pref-width: 110px;
+}
+
+.menu-text {
+    -fx-transition: opacity 0.5s ease-out;
+    -fx-fill: white;
+    -fx-wrap-text: true;
+    -fx-opacity: 0;
+
+}
+
+.left-menu:hover .menu-text {
+    -fx-opacity: 1;
+    -fx-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+.main-content-panel {
+    -fx-background-color: #3a3c3c;
+}
+
+.menu-item {
+    -fx-transition: 0.5s ease;
+    -fx-border-radius: 30px;
+    -fx-padding: 5px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #5a5a5a;
+}

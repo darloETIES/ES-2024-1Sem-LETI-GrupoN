@@ -1,5 +1,4 @@
 module grupo.n.gestaodoterritorio {
-    requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
 
@@ -12,7 +11,10 @@ module grupo.n.gestaodoterritorio {
     requires jts.core;
     requires org.jgrapht.core;
     requires org.apache.commons.csv;
+    requires de.jensd.fx.glyphs.fontawesome;
 
     opens grupo.n.gestaodoterritorio to javafx.fxml;
     exports grupo.n.gestaodoterritorio;
+    exports grupo.n.gestaodoterritorio.controllers;
+    opens grupo.n.gestaodoterritorio.controllers to javafx.fxml;
 }

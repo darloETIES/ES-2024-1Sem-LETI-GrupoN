@@ -15,6 +15,17 @@
 
   <dependencies>
 
+    <!-- Icons para a GUI -->
+    <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-fontawesome -->
+    <dependency>
+      <groupId>de.jensd</groupId>
+      <artifactId>fontawesomefx-fontawesome</artifactId>
+      <version>4.7.0-9.1.2</version>
+    </dependency>
+
+
+
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -147,7 +158,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>grupo.n.gestaodoterritorio/grupo.n.gestaodoterritorio.HelloApplication</mainClass>
+              <mainClass>grupo.n.gestaodoterritorio/grupo.n.gestaodoterritorio.GestTerrApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

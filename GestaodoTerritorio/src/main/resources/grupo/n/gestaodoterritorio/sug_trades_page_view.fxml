@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="grupo.n.gestaodoterritorio.controllers.SuggestedTradesPageViewController"
+            prefHeight="351.0" prefWidth="534.0" styleClass="main-content-panel" stylesheets="@css/styles.css">
+    <children>
+        <FontAwesomeIconView fill="WHITE" glyphName="EXCHANGE" layoutX="261.0" layoutY="137.0" size="50" />
+    </children>
+
+</AnchorPane>
