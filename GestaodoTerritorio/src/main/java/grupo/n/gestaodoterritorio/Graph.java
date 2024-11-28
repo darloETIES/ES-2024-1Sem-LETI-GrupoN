@@ -60,4 +60,5 @@ public class Graph {
     public SimpleGraph<Property, DefaultEdge> getGraph() {
         return graph;
     }
+    
 }

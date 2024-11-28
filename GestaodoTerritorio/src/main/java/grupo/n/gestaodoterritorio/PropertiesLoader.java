@@ -15,11 +15,12 @@ public class PropertiesLoader {
 
     private String file;
     private List<Property> propertiesList;
-
+    private List<Owner> ownerList;
     /**Construtor para leitura do ficheiro CSV*/
     public PropertiesLoader(String file) {
         this.file = file;
         this.propertiesList = new ArrayList<>();
+        this.ownerList = new ArrayList<>();
     }
 
     /**
@@ -72,17 +73,29 @@ public class PropertiesLoader {
             String wkt = record.get("geometry");
             Geometry geometry = reader.read(wkt);
 
-            String owner = record.get("OWNER");
+            //String owner = record.get("OWNER");
+            String ownerId = record.get("OWNER");
             //acrescimo dos campos freguesia, concelho e ilha, nova versao no moodle
             String parish = record.get("Freguesia");
             String county = record.get("Municipio");
             String district = record.get("Ilha");
             //Instacia uma nova propriedade
-            Property property = new Property(objectID, parID, parNumAsString, shapeLength, shapeArea, geometry, owner, parish, county, district);
+            Property property = new Property(objectID, parID, parNumAsString, shapeLength, shapeArea, geometry, ownerId, parish, county, district);
             propertiesList.add(property);
             properties.put(objectID, property);
+            for(Owner owner : ownerList){
+              if(ownerList.contains(owner)){
+                  owner.addToOwnerPropertyList(property);
+              }
+              else{
+                  ownerList.add(new Owner(ownerId) );
+                  owner.addToOwnerPropertyList(property);
+              }
+             }
+
 
             System.out.println(property);
+            //System.out.println("Owner: " + ownerId + "Ter esta propriedade: " + property + "Lista: " + propertiesList);
 
         }
 
