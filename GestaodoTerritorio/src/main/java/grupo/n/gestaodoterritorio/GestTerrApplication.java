@@ -1,6 +1,7 @@
 package grupo.n.gestaodoterritorio;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import grupo.n.gestaodoterritorio.services.PropertiesService;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,15 @@ public class GestTerrApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
+        try{
+            PropertiesService.getInstance().loadProperties("GestaodoTerritorio/src/main/resources/Madeira-Moodle-1.1.csv");
+        } catch (Exception e){
+            e.printStackTrace();
+            System.err.println("Erro ao carregar o ficheiro CSV!");
+            System.exit(1); //Sair da aplicação se falhar
+        }
+
         FXMLLoader fxmlLoader = new FXMLLoader(GestTerrApplication.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 577, 371);
 

@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleButton?>
 
 <AnchorPane prefHeight="351.0" prefWidth="534.0" styleClass="main-content-panel" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo.n.gestaodoterritorio.controllers.GraphPageViewController">
-   <children>
-      <FontAwesomeIconView fill="WHITE" glyphName="CODE_FORK" layoutX="261.0" layoutY="137.0" size="50" />
-   </children>
+    <children>
+
+        <!-- Área da imagem -->
+        <AnchorPane prefHeight="351.0" prefWidth="378.0" styleClass="graph-viewer">
+            <children>
+                <ImageView fitHeight="351.0" fitWidth="364.0" layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </AnchorPane>
+
+        <VBox layoutX="398.0" prefHeight="351.0" prefWidth="154.0" styleClass="button-container" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label prefWidth="134.0" text="Visualizador de Grafos" textFill="WHITE" wrapText="true" VBox.vgrow="SOMETIMES">
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CODE_FORK" size="32" textAlignment="CENTER" />
+                    </graphic>
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="50.0" />
+                    </VBox.margin>
+                </Label>
+                <ToggleButton fx:id="btnPropriedades" alignment="CENTER" mnemonicParsing="false" styleClass="graph-viewer-btn" text="Propriedades" textAlignment="CENTER" toggleGroup="$graphButtons">
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="18" />
+                    </graphic>
+                    <font>
+                        <Font name="Microsoft JhengHei UI" size="10.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton fx:id="btnProprietarios" alignment="CENTER" mnemonicParsing="false" styleClass="graph-viewer-btn" text="Proprietários" textAlignment="CENTER" toggleGroup="$graphButtons">
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="18" />
+                    </graphic>
+                    <font>
+                        <Font name="Microsoft JhengHei" size="12.0" />
+                    </font>
+                </ToggleButton>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
