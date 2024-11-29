@@ -23,4 +23,5 @@ public class Owner {
     public void addToOwnerPropertyList(Property property) {
         ownerPropertyList.add(property);
     }
+
 }

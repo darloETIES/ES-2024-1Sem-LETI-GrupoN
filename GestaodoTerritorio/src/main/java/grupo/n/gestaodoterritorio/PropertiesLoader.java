@@ -5,7 +5,6 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.io.WKTReader;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.stereotype.Component;
 
 import java.io.FileReader;
 import java.util.*;
@@ -101,7 +100,43 @@ public class PropertiesLoader {
 
         return properties;
     }
+    public Map<String, Owner> readOwners() throws Exception /*Exception para que verifique se o caminho do ficheiro*/ {
 
+        Map<String, Owner> Owners = new HashMap<>();
+        Map<String, Property> properties = readProperties();
+        GeometryFactory gf = new GeometryFactory();
+        WKTReader reader = new WKTReader(gf);
+
+        FileReader fileReader = new FileReader(file);
+
+        /*Lê cada linha do ficheiro CSV e retorna como um objeto CSVRecord:*/
+        Iterable<CSVRecord> records = CSVFormat.DEFAULT
+                .withDelimiter(';') //delimitando com ';'
+                .withFirstRecordAsHeader() //ignorando a primeira linha (como cabeçalho)
+                .withIgnoreSurroundingSpaces()
+                .withAllowMissingColumnNames() // Permitir colunas sem nome
+                .parse(fileReader);
+
+        for (CSVRecord record : records) {
+
+
+            String ownerId = record.get("OWNER");
+
+            Owner Owner = new Owner(ownerId);
+            Owners.put(ownerId, Owner);
+            for (Property property : properties.values()) {
+                String ownerID = property.getOwner(); // Assume the Property has an Owner ID
+                Owner owner = Owners.get(ownerID);
+
+                // If the owner doesn't exist, create a new Owner and associate the property
+                if (owner == null) {
+                    owner = new Owner(ownerID);  // Create new Owner if it doesn't exist
+                    Owners.put(ownerID, owner);
+                }
+            }
+                   }
+        return Owners;
+    }
     /**
      * cálculo da área média das propriedades de uma dada região
      * @param parish
