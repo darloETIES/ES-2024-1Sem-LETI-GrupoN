@@ -5,6 +5,10 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.io.WKTReader;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleGraph;
+
 import java.io.FileReader;
 import java.util.*;
 
@@ -211,6 +215,50 @@ public class PropertiesLoader {
         }
         return totalArea / count;
 
+    }
+
+    public void sugests(SimpleGraph<Owner, DefaultEdge> graph){ //ver tipo de devolucao
+
+        for (DefaultEdge edge : graph.edgeSet()) { //1º passo - passar por todas as adjacências do grafo de proprietários
+            // Obter os vértices conectados pela aresta (ou seja todos os pares de proprietarios vizinhos)
+            Owner source = graph.getEdgeSource(edge);
+            Owner target = graph.getEdgeTarget(edge);
+            int nr_propriedades_vizinhas = 0; //auxiliar para contar quantas vezes dois proprietarios sao vizinhos com diferentes propriedades
+
+            List<Property> sourceList = source.getOwnerPropertyList();
+            List<Property> targetList = target.getOwnerPropertyList();
+            for(Property property1 : sourceList){
+                for(Property property2 : targetList){
+                    //if para evitar propriedades repetidas e simétricas( ou seja se propA e adjacente a propB nao e necessario verificar se propB e adjacente a propA
+                    if (!property1.getObjectId().equals(property2.getObjectId()) && Integer.parseInt(property1.getObjectId())< Integer.parseInt(property2.getObjectId())){
+                        Geometry g1 = property1.getGeometry();
+                        Geometry g2 = property2.getGeometry();
+                        boolean intersects = g1.intersects(g2);
+
+                        if (intersects) {
+                            nr_propriedades_vizinhas++;
+                            if(nr_propriedades_vizinhas==2){
+                                break;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            if(nr_propriedades_vizinhas ==2 ){
+                //se dois proprietarios sao vizinhos em dois sitios ver entao se nao a perdas maiores q 0.05
+                //guardar tambem quais as propriedades vizinhas mais acima para poder continuar isto
+            }
+
+        }
+
+        /*
+
+2º passo- para cada adjacência, verificar (entre todas as duplas de propriedades possíveis, sendo uma de cada proprietário) se dois proprietários sao vizinhos em dois sítios
+3º passo - tendo as duplas de vizinhança, ver se nenhum proprietário perde 5% de área face a sua situação original
+4º passo - exprimir essa sugestao
+         */
     }
 
 
