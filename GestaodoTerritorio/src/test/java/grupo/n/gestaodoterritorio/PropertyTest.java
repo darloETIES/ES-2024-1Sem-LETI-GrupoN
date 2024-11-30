@@ -31,7 +31,8 @@ class PropertyTest {
         assertInstanceOf(MultiPolygon.class, geometry);
 
         //Criação do objeto Property
-        p = new Property("1", "7343148.0", "2996240000000", 57.2469341921808, 202.05981432070362, geometry, "93", "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
+        Owner o = new Owner("93");
+        p = new Property("1", "7343148.0", "2996240000000", 57.2469341921808, 202.05981432070362, geometry, o, "Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)");
 
     }
 
@@ -43,7 +44,7 @@ class PropertyTest {
         assertEquals(57.2469341921808, p.getShapeLength());
         assertEquals(202.05981432070362, p.getShapeArea());
         assertEquals(geometry, p.getGeometry());
-        assertEquals("93", p.getOwner());
+        assertEquals("93", p.getOwner().getOwnerID());
         assertEquals("Arco da Calheta", p.getParish());
         assertEquals("Calheta", p.getCounty());
         assertEquals("Ilha da Madeira (Madeira)", p.getDistrict());

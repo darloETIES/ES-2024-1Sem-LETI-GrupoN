@@ -15,10 +15,11 @@ public class Main {
             //ler os dados do CSV
             PropertiesLoader ploader = new PropertiesLoader(file);
             Map<String, Property> properties = ploader.readProperties();
+            Map<String, Owner> Owners=ploader.readOwners();
 
             //Criacao do grafo
             Graph graph = new Graph();
-            graph.createGraph(properties);
+            graph.createGraphOwners(Owners);
             graph.printGraphStats();
 
             //Calculo da area geografica selecionada pelo utilizador

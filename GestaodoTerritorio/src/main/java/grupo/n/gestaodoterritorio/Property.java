@@ -10,12 +10,12 @@ public class Property {
     private double shapeLength;
     private double shapeArea;
     private Geometry geometry;
-    private String owner;
+    private Owner owner;
     private String parish;
     private String county;
     private String district;
 
-    public Property(String objectId, String parId, String parNum, double shapeLength, double shapeArea, Geometry geometry, String owner, String parish, String county, String district) {
+    public Property(String objectId, String parId, String parNum, double shapeLength, double shapeArea, Geometry geometry, Owner owner, String parish, String county, String district) {
         this.objectId = objectId;
         this.parId = parId;
         this.parNum = parNum;
@@ -76,11 +76,11 @@ public class Property {
         return geometry;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(Owner owner) {
         this.owner = owner;
     }
 
-    public String getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 
@@ -106,6 +106,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return "ObjectID: " + objectId + " | ParID: " + parId + " | ParNum: " + parNum + " | Owner: " + owner + " | Parish: " + parish + " | County: " + county + " | District: " + district;
+        return objectId +  " | " + owner ;
     }
 }

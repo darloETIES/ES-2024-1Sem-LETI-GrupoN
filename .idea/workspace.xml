@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c3749c6a-3ea1-456e-83ab-91a2235c0787" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/GestTerrApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/GestTerrApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +80,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="GestaodoTerritorio" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="GestaodoTerritorio" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GestTerrApplication" />
@@ -102,7 +119,7 @@
       <workItem from="1732373026057" duration="9812000" />
       <workItem from="1732626874527" duration="33009000" />
       <workItem from="1732749633047" duration="27057000" />
-      <workItem from="1732890093212" duration="16922000" />
+      <workItem from="1732890093212" duration="7383000" />
     </task>
     <servers />
   </component>
