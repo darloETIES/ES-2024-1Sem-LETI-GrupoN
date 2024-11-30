@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import org.controlsfx.glyphfont.FontAwesome;
@@ -34,13 +35,15 @@ public class GestTerrApplication extends Application {
         //Remover a barra acima na aplicação javaFx
         stage.initStyle(javafx.stage.StageStyle.UNDECORATED);
 
+        AnchorPane windowBar = (AnchorPane) scene.lookup(".window-bar");
+
         // Adicionar eventos para arrastar a janela
-        scene.setOnMousePressed(event -> {
+        windowBar.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
         });
 
-        scene.setOnMouseDragged(event -> {
+        windowBar.setOnMouseDragged(event -> {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         });
