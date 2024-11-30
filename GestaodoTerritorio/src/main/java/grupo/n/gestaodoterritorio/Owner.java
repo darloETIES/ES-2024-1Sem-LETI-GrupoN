@@ -24,4 +24,11 @@ public class Owner {
         ownerPropertyList.add(property);
     }
 
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "ownerID='" + ownerID + '\'' +
+                ", ownerPropertyList=" + ownerPropertyList +
+                '}';
+    }
 }

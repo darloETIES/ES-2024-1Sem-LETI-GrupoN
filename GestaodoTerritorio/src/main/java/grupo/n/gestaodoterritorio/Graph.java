@@ -65,7 +65,7 @@ public class Graph {
                             if ( g1.intersects(g2)) {
                                 // Adiciona uma aresta entre o1 e o2 no grafo
                                 graphOwner.addEdge(o1, o2);
-                                System.out.println("Edge added between " + o1.getOwnerID() + " and " + o2.getOwnerID());
+                                
                             }
                         }
                     }
@@ -77,10 +77,15 @@ public class Graph {
     /**
      * Informações sobre o grafo
      */
+    public void printGraphStatsOwners() {
+        System.out.println("Sobre o Grafo:");
+        System.out.println("- " + graphOwner.vertexSet().size() + " nós (proprietários)");
+        System.out.println("- " + graphOwner.edgeSet().size() + " arestas (vizinhancas)");
+    }
     public void printGraphStats() {
         System.out.println("Sobre o Grafo:");
-        System.out.println("- " + graphOwner.vertexSet().size() + " nós (propriedades)");
-        System.out.println("- " + graphOwner.edgeSet().size() + " arestas (vizinhancas)");
+        System.out.println("- " + graph.vertexSet().size() + " nós (propriedades)");
+        System.out.println("- " + graph.edgeSet().size() + " arestas (vizinhancas)");
     }
 
     /**

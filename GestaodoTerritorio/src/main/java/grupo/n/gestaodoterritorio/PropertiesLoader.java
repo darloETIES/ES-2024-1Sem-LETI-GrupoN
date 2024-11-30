@@ -82,18 +82,26 @@ public class PropertiesLoader {
             Property property = new Property(objectID, parID, parNumAsString, shapeLength, shapeArea, geometry, ownerId, parish, county, district);
             propertiesList.add(property);
             properties.put(objectID, property);
-            for(Owner owner : ownerList){
-              if(ownerList.contains(owner)){
-                  owner.addToOwnerPropertyList(property);
-              }
-              else{
-                  ownerList.add(new Owner(ownerId) );
-                  owner.addToOwnerPropertyList(property);
-              }
-             }
+            Owner owner = null;
+            for (Owner o : ownerList) {
+                if (o.getOwnerID().equals(ownerId)) {
+                    owner = o;
+                    break; // Stop looping once the matching owner is found
+                }
+            }
+
+            if (owner == null) {
+                // Se o proprietário não existe, cria um novo e adiciona à lista
+                owner = new Owner(ownerId);
+                ownerList.add(owner);
+            }
+
+            // Associa a propriedade ao proprietário
+            owner.addToOwnerPropertyList(property);
 
 
-            System.out.println(property);
+          //  System.out.println(property);
+            System.out.println(owner);
             //System.out.println("Owner: " + ownerId + "Ter esta propriedade: " + property + "Lista: " + propertiesList);
 
         }
@@ -102,40 +110,25 @@ public class PropertiesLoader {
     }
     public Map<String, Owner> readOwners() throws Exception /*Exception para que verifique se o caminho do ficheiro*/ {
 
-        Map<String, Owner> Owners = new HashMap<>();
+        // Map to store the owners
+        Map<String, Owner> owners = new HashMap<>();
+
+        // Load properties first
         Map<String, Property> properties = readProperties();
-        GeometryFactory gf = new GeometryFactory();
-        WKTReader reader = new WKTReader(gf);
 
-        FileReader fileReader = new FileReader(file);
+        // Iterate over all properties to associate them with their respective owners
+        for (Property property : properties.values()) {
+            String ownerId = property.getOwner(); // Get the owner ID from the property
 
-        /*Lê cada linha do ficheiro CSV e retorna como um objeto CSVRecord:*/
-        Iterable<CSVRecord> records = CSVFormat.DEFAULT
-                .withDelimiter(';') //delimitando com ';'
-                .withFirstRecordAsHeader() //ignorando a primeira linha (como cabeçalho)
-                .withIgnoreSurroundingSpaces()
-                .withAllowMissingColumnNames() // Permitir colunas sem nome
-                .parse(fileReader);
+            // Retrieve or create the Owner
+            Owner owner = owners.computeIfAbsent(ownerId, Owner::new);
 
-        for (CSVRecord record : records) {
+            // Add the property to the owner's property list
+            owner.addToOwnerPropertyList(property);
+        }
 
-
-            String ownerId = record.get("OWNER");
-
-            Owner Owner = new Owner(ownerId);
-            Owners.put(ownerId, Owner);
-            for (Property property : properties.values()) {
-                String ownerID = property.getOwner(); // Assume the Property has an Owner ID
-                Owner owner = Owners.get(ownerID);
-
-                // If the owner doesn't exist, create a new Owner and associate the property
-                if (owner == null) {
-                    owner = new Owner(ownerID);  // Create new Owner if it doesn't exist
-                    Owners.put(ownerID, owner);
-                }
-            }
-                   }
-        return Owners;
+        // Return the complete map of owners
+        return owners;
     }
     /**
      * cálculo da área média das propriedades de uma dada região
