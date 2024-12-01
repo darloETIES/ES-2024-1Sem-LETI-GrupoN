@@ -21,6 +21,7 @@ public class Main {
             Graph graph = new Graph();
             graph.createGraphOwners(Owners);
             graph.printGraphStatsOwners();
+            graph.drawGraph();
 
             //Calculo da area geografica selecionada pelo utilizador
             String parish = "Arco da Calheta";

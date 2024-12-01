@@ -1,10 +1,21 @@
 package grupo.n.gestaodoterritorio;
 
+import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
+import com.mxgraph.layout.mxCircleLayout;
+import com.mxgraph.layout.mxFastOrganicLayout;
+import com.mxgraph.layout.mxGraphLayout;
+import com.mxgraph.layout.mxParallelEdgeLayout;
+import com.mxgraph.util.mxCellRenderer;
 import com.vividsolutions.jts.geom.Geometry;
+import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -86,6 +97,42 @@ public class Graph {
         System.out.println("Sobre o Grafo:");
         System.out.println("- " + graph.vertexSet().size() + " nós (propriedades)");
         System.out.println("- " + graph.edgeSet().size() + " arestas (vizinhancas)");
+    }
+    public void drawGraph() {
+        try {
+            // Create JGraphXAdapter from the graph
+            JGraphXAdapter<Owner, DefaultEdge> graphAdapter = new JGraphXAdapter<>(graphOwner);
+
+            graphAdapter.getStylesheet().getDefaultVertexStyle().put("fontSize", 10);
+            graphAdapter.getStylesheet().getDefaultVertexStyle().put("autosize", true);
+            graphAdapter.getStylesheet().getDefaultVertexStyle().put("spacing", 10);
+
+            // Apply layout
+            // Apply force-directed layout with increased spacing
+            mxCircleLayout layout = new mxCircleLayout(graphAdapter);
+            layout.setRadius(300); // Set the radius of the circle
+            layout.execute(graphAdapter.getDefaultParent());
+
+
+
+            // Optional: Control flow direction (NORTH, SOUTH, etc.)
+
+
+            // Render the graph to a BufferedImage at reduced scale
+
+            BufferedImage image = mxCellRenderer.createBufferedImage(graphAdapter, null, 1, null, true, null);
+
+            // Ensure output directory exists
+            File outputFile = new File("GestaodoTerritorio/src/main/images/grafo_hierarchical.png");
+            outputFile.getParentFile().mkdirs();
+
+            // Save the image to a file
+            ImageIO.write(image, "PNG", outputFile);
+            System.out.println("Graph saved as image: " + outputFile.getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Failed to create graph image.");
+        }
     }
 
     /**

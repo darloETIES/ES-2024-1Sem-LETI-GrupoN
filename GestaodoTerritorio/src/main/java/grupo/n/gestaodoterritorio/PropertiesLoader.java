@@ -56,8 +56,10 @@ public class PropertiesLoader {
                 .withIgnoreSurroundingSpaces()
                 .withAllowMissingColumnNames() // Permitir colunas sem nome
                 .parse(fileReader);
-
+int count=0;
         for (CSVRecord record : records) {
+            if(count == 35000)
+                break;
             String objectID = record.get("OBJECTID");
             String parID = record.get("PAR_ID");
 
@@ -99,7 +101,7 @@ public class PropertiesLoader {
             // Associa a propriedade ao proprietário
             owner.addToOwnerPropertyList(property);
 
-
+count++;
           //  System.out.println(property);
             System.out.println(owner);
             //System.out.println("Owner: " + ownerId + "Ter esta propriedade: " + property + "Lista: " + propertiesList);

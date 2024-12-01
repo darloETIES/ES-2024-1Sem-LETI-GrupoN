@@ -26,9 +26,6 @@ public class Owner {
 
     @Override
     public String toString() {
-        return "Owner{" +
-                "ownerID='" + ownerID + '\'' +
-                ", ownerPropertyList=" + ownerPropertyList +
-                '}';
+        return ownerID;
     }
 }
