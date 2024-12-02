@@ -62,7 +62,7 @@ public class AreasPageViewController {
 
     private void handleWithProprietario(String parish, String county, String district, String owner) {
         //Quando o proprietário é fornecido
-        double averageArea = PropertiesService.getInstance().getAverageArea(parish, county, district);
+        double averageArea = PropertiesService.getInstance().getAveragePropAreaByOwner(parish, county, district, owner);
 
 
         System.out.println("Com proprietário:");

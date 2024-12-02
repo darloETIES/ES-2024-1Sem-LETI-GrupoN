@@ -9,9 +9,10 @@ module grupo.n.gestaodoterritorio {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires jts.core;
-    requires org.jgrapht.core;
     requires org.apache.commons.csv;
     requires de.jensd.fx.glyphs.fontawesome;
+    requires org.jgrapht.ext;
+    requires java.desktop;
 
     opens grupo.n.gestaodoterritorio to javafx.fxml;
     exports grupo.n.gestaodoterritorio;

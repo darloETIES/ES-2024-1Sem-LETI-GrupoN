@@ -1,5 +1,9 @@
 package grupo.n.gestaodoterritorio;
 
+import org.jgrapht.ListenableGraph;
+import org.jgrapht.ext.JGraphXAdapter;
+import org.jgrapht.graph.DefaultEdge;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,20 +18,37 @@ public class Main {
         try{
             //ler os dados do CSV
             PropertiesLoader ploader = new PropertiesLoader(file);
+            System.out.println("Ler propriedades");
             Map<String, Property> properties = ploader.readProperties();
-            Map<String, Owner> Owners=ploader.readOwners();
+            System.out.println("Ler proprietários");
+            Map<String, Owner> owners = ploader.readOwners();
+
 
             //Criacao do grafo
-            Graph graph = new Graph();
-            graph.createGraphOwners(Owners);
-            graph.printGraphStats();
+            // Grafo de propriedades
+            Graph<Property> propertyGraph = new Graph<>();
+            propertyGraph.createGraph(properties);
+            propertyGraph.printGraphStats();
+            propertyGraph.drawGraph("Properties");
+
+            // Grafo de proprietários
+            Graph<Owner> ownerGraph = new Graph<>();
+            ownerGraph.createGraph(owners);
+            ownerGraph.printGraphStats();
+            ownerGraph.drawGraph("Owners");
 
             //Calculo da area geografica selecionada pelo utilizador
             String parish = "Arco da Calheta";
             String county = "Calheta";
             String district = "Ilha da Madeira (Madeira)";
+            String ownerID = "5";
+
             double averageAreaProp = ploader.averageAreaProp(parish, county, district);
             System.out.println("Average Area from " + parish + ", " + county + ", " + district + " -> " + averageAreaProp);
+
+            double averageAreaOwners = ploader.averagePropAreaByOwner(parish, county, district, ownerID);
+            System.out.println("Average Area from " + parish + ", " + county + ", " + district + " (OWNERID = "+ ownerID + ") -> " + averageAreaOwners);
+
 
         } catch (Exception e){
             e.printStackTrace();

@@ -59,9 +59,25 @@
     -fx-background-color: #5a5a5a;
 }
 
+/* Estilos de graph-page-view */
+/* Estilo do fundo do ScrollPane */
+.graph-viewer-scroll-pane {
+    -fx-background-color: #404040; /* Fundo principal */
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
 
-/* estilos de graph-page-view */
-.graph-viewer{
+/* Estilo do fundo da área de visualização */
+.graph-viewer-scroll-pane .viewport {
+    -fx-background-color: #404040; /* Fundo interno */
+}
+
+/* Estilo dos botões de incremento/decremento */
+.graph-viewer-scroll-pane .scroll-bar .increment-button,
+.graph-viewer-scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent; /* Botões invisíveis */
+    -fx-padding: 0;
+    -fx-shape: null; /* Remove a forma padrão */
 }
 
 /* Estilo padrão do botão */
@@ -114,6 +130,29 @@
 }
 
 
+/* Estilo do botão de reset */
+.graph-viewer-reset-btn {
+    -fx-background-color: rgba(37, 37, 37, 0.68);
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 10px 15px;
+    -fx-min-width: 100px;
+    -fx-font-size: 12px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+/* Estilo do botão de reset ao passar o mouse */
+.graph-viewer-reset-btn:hover {
+    -fx-background-color: rgba(92, 92, 92, 0.71);
+}
+
+/* Definir o botão invisível inicialmente */
+.graph-viewer-reset-btn[visible=false] {
+    -fx-opacity: 0;
+}
 
 .button-container {
     -fx-alignment: center;

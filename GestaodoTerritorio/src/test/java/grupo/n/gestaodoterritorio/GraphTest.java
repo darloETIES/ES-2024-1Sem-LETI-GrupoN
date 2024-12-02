@@ -13,7 +13,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GraphTest {
-    private Graph graph;
+    private Graph<Property> graph;
     private static WKTReader wktReader;
     private Property p1, p2, p3;
     private Geometry g1, g2, g3;
@@ -25,7 +25,7 @@ class GraphTest {
 
     @BeforeEach
     void setUp() throws ParseException {
-        graph = new Graph();
+        graph = new Graph<>();
 
         //NOTA: As propriedades foram verificadas previamente sobre as suas adjacências
         //p1 e p3 têm vizinhança com p2
@@ -68,7 +68,7 @@ class GraphTest {
 
     @BeforeEach
     void setUpNoIntersectioTest() {
-        graph = new Graph();
+        graph = new Graph<>();
     }
 
     @Test
@@ -85,7 +85,7 @@ class GraphTest {
 
     @BeforeEach
     void setUpTestIntersection() {
-        graph = new Graph();
+        graph = new Graph<>();
     }
 
     @Test

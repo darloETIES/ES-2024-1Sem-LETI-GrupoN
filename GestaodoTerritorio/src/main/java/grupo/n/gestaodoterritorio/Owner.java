@@ -23,4 +23,8 @@ public class Owner {
     public void addToOwnerPropertyList(Property property) {
         ownerPropertyList.add(property);
     }
+
+    public String toString() {
+        return ownerID;
+    }
 }
