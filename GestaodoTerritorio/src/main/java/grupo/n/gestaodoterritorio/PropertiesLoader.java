@@ -15,9 +15,17 @@ import java.util.*;
 
 public class PropertiesLoader {
 
+
     private String file;
     private List<Property> propertiesList;
     private List<Owner> ownerList;
+    //listas de apoio para sugestao de trocas
+    private List<Property> AUXsourceList;
+    private List<Property> AUXtargetList;
+    private List<Proposal> suggestions; //lista para devolver todas as sugestoes de troca
+
+
+
     /**Construtor para leitura do ficheiro CSV*/
     public PropertiesLoader(String file) {
         this.file = file;
@@ -199,7 +207,7 @@ public class PropertiesLoader {
                         //se as propriedades forem do mesmo dono e area geografica e se tambem forem adjacentes
                         totalArea += property1.getShapeArea() + property2.getShapeArea();
                         count++; //sendo adjacentes soma se a contagem apenas uma unidade ja que o objetivo e contar propriedades adjacentes como sendo uma
-                    }else if(matchesParish1 && matchesCounty1 && matchesDistrict1 && matchesOwner1 && matchesParish2 && matchesCounty2 && matchesOwner2 && matchesDistrict2){
+                    }else if(matchesParish1 && matchesCounty1 && matchesDistrict1 && matchesOwner1 && matchesParish2 && matchesCounty2 && matchesOwner2 && matchesDistrict2 && !intersects){
                         //se as propriedades forem do mesmo dono e area geografica, mas nao forem adjacentes
                         totalArea += property1.getShapeArea() + property2.getShapeArea();
                         count+=2; //nao sendo adjacente soma se a contagem duas propriedades
@@ -217,48 +225,68 @@ public class PropertiesLoader {
 
     }
 
-    public void sugests(SimpleGraph<Owner, DefaultEdge> graph){ //ver tipo de devolucao
-
-        for (DefaultEdge edge : graph.edgeSet()) { //1º passo - passar por todas as adjacências do grafo de proprietários
-            // Obter os vértices conectados pela aresta (ou seja todos os pares de proprietarios vizinhos)
-            Owner source = graph.getEdgeSource(edge);
+    public List<Proposal> exchSuggestions(SimpleGraph<Owner, DefaultEdge> graph){
+        /*1º passo - passar por todas as adjacências do grafo de proprietários
+        2º passo- para cada adjacência, verificar (entre todas as duplas de propriedades possíveis, sendo uma de cada proprietário) se dois proprietários sao vizinhos em dois sítios
+        3º passo - tendo as duplas de vizinhança, ver se nenhum proprietário perde 5% de área face a sua situação original
+        4º passo - exprimir essa sugestao */
+        for (DefaultEdge edge : graph.edgeSet()) { //1ºPasso
+            Owner source = graph.getEdgeSource(edge);// Obter os vértices conectados pela aresta (ou seja dois proprietarios com relacao de vizinhanca)
             Owner target = graph.getEdgeTarget(edge);
             int nr_propriedades_vizinhas = 0; //auxiliar para contar quantas vezes dois proprietarios sao vizinhos com diferentes propriedades
-
             List<Property> sourceList = source.getOwnerPropertyList();
             List<Property> targetList = target.getOwnerPropertyList();
-            for(Property property1 : sourceList){
+            double originalSourceArea = 0;
+            double originalTargetArea = 0;
+            //Limpa-se as listas de prop aux, para que o calculo efetuado para um novo caso de proprietarios
+            // seja feito sem as propriedades selecionadas na iteracao de proprietarios anterior
+            AUXsourceList.clear();
+            AUXtargetList.clear();
+            for(Property property1 : sourceList){ //2ºPasso
                 for(Property property2 : targetList){
-                    //if para evitar propriedades repetidas e simétricas( ou seja se propA e adjacente a propB nao e necessario verificar se propB e adjacente a propA
-                    if (!property1.getObjectId().equals(property2.getObjectId()) && Integer.parseInt(property1.getObjectId())< Integer.parseInt(property2.getObjectId())){
                         Geometry g1 = property1.getGeometry();
                         Geometry g2 = property2.getGeometry();
                         boolean intersects = g1.intersects(g2);
-
                         if (intersects) {
                             nr_propriedades_vizinhas++;
-                            if(nr_propriedades_vizinhas==2){
+                            AUXsourceList.add(property1);//guardar quais as propriedades vizinhas para poder fazer calculos com as suas areas
+                            AUXtargetList.add(property2);
+                            if(nr_propriedades_vizinhas==2){ //se forem vizinhos em dois sitios diferentes podemos sugerir uma troca
                                 break;
                             }
                         }
-
-                    }
-
                 }
             }
-            if(nr_propriedades_vizinhas ==2 ){
-                //se dois proprietarios sao vizinhos em dois sitios ver entao se nao a perdas maiores q 0.05
-                //guardar tambem quais as propriedades vizinhas mais acima para poder continuar isto
+            if(nr_propriedades_vizinhas ==2 ){//se dois proprietarios sao vizinhos em dois sitios ver entao se nao existem perdas maiores q 0.05, para a troca ser viavel
+                for(Property property1 : AUXsourceList){
+                    originalSourceArea += property1.getShapeArea();
+                }
+                for(Property property2 : AUXtargetList){
+                    originalTargetArea += property2.getShapeArea();
+                }
+                if(fairExch(AUXsourceList, originalSourceArea, AUXtargetList, originalTargetArea)){ //3ºPasso
+                    Proposal sug = new Proposal(source, target, AUXsourceList, AUXtargetList); //4ºPasso
+                    suggestions.add(sug);
+                }
             }
-
         }
+        return suggestions;
+    }
 
-        /*
+    //Metodo para verificar que em nenhum dos casos nenhum proprietario perde mais do que 5% de area de forma a troca ser justa
+    public boolean fairExch(List<Property> sourceList, double sourceArea, List<Property> targetList, double targetArea){
+        double newSourceAreaExch1 = sourceList.get(0).getShapeArea() + targetList.get(0).getShapeArea() ;
+        double fair1 = Math.abs((newSourceAreaExch1-sourceArea)/sourceArea); //tera q ser menor q 0.05
+        double newTargetAreaExch1 = sourceList.get(1).getShapeArea() + targetList.get(1).getShapeArea() ;
+        double fair2 = Math.abs((newTargetAreaExch1-targetArea)/targetArea);
 
-2º passo- para cada adjacência, verificar (entre todas as duplas de propriedades possíveis, sendo uma de cada proprietário) se dois proprietários sao vizinhos em dois sítios
-3º passo - tendo as duplas de vizinhança, ver se nenhum proprietário perde 5% de área face a sua situação original
-4º passo - exprimir essa sugestao
-         */
+        double newSourceAreaExch2 = sourceList.get(1).getShapeArea() + targetList.get(1).getShapeArea() ;
+        double fair3 = Math.abs((newSourceAreaExch2-sourceArea)/sourceArea);
+        double newTargetAreaExch2 = sourceList.get(0).getShapeArea() + targetList.get(0).getShapeArea() ;
+        double fair4 = Math.abs((newTargetAreaExch2-targetArea)/targetArea);
+
+        boolean isFair = (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05);
+        return isFair;
     }
 
 
