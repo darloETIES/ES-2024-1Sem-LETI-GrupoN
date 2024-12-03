@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c3749c6a-3ea1-456e-83ab-91a2235c0787" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/images/grafoOwners.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/AlertWindowViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/managers/LoadingWindowManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/alert-window-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,7 @@
       <workItem from="1732626874527" duration="33009000" />
       <workItem from="1732749633047" duration="27057000" />
       <workItem from="1732890093212" duration="7383000" />
-      <workItem from="1732991192840" duration="70892000" />
+      <workItem from="1732991192840" duration="76321000" />
     </task>
     <servers />
   </component>
