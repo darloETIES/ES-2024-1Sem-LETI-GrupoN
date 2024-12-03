@@ -318,3 +318,27 @@
     -fx-min-height: Region.USE_COMPUTED_SIZE;
 }
 
+
+/* Alert Window */
+.alert-window{
+    -fx-background-color: #393939;
+
+}
+
+.alert-window Label{
+    -fx-text-fill: white;
+}
+
+.alert-window ProgressBar {
+    -fx-background-color: transparent; /* Fundo da barra */
+}
+
+.alert-window ProgressBar .track {
+    -fx-background-color: #737373; /* Cor do fundo da progress bar */
+    -fx-background-radius: 10px;
+}
+
+.alert-window ProgressBar .bar {
+    -fx-background-color: linear-gradient(to right, #bcbcbc, #e8e8e8); /* Gradiente na barra */
+    -fx-background-radius: 10px;
+}

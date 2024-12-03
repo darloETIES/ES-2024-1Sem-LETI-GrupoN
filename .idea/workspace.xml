@@ -6,19 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c3749c6a-3ea1-456e-83ab-91a2235c0787" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/images/grafoOwners.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/AreasPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/AreasPageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/GraphPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/GraphPageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/services/PropertiesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/services/PropertiesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/graph-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/graph-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/GraphTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +20,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -133,7 +124,7 @@
       <workItem from="1732626874527" duration="33009000" />
       <workItem from="1732749633047" duration="27057000" />
       <workItem from="1732890093212" duration="7383000" />
-      <workItem from="1732991192840" duration="65363000" />
+      <workItem from="1732991192840" duration="70892000" />
     </task>
     <servers />
   </component>

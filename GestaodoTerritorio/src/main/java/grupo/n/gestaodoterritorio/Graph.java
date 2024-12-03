@@ -1,11 +1,8 @@
 package grupo.n.gestaodoterritorio;
 
 
+import com.mxgraph.layout.*;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
-import com.mxgraph.layout.mxCircleLayout;
-import com.mxgraph.layout.mxFastOrganicLayout;
-import com.mxgraph.layout.mxGraphLayout;
-import com.mxgraph.layout.mxParallelEdgeLayout;
 import com.mxgraph.util.mxCellRenderer;
 import com.vividsolutions.jts.geom.Geometry;
 import org.jgrapht.ext.JGraphXAdapter;
@@ -99,8 +96,8 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
             graphAdapter.getStylesheet().getDefaultVertexStyle().put("autosize", true);
             graphAdapter.getStylesheet().getDefaultVertexStyle().put("spacing", 10);
 
-            // Configura layout circular
             mxFastOrganicLayout layout = new mxFastOrganicLayout(graphAdapter);
+            // Configura layout circular
             //mxCircleLayout layout = new mxCircleLayout(graphAdapter);
             //layout.setRadius(300);
             layout.execute(graphAdapter.getDefaultParent());
@@ -108,11 +105,11 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
             // Renderiza o grafo como imagem
             BufferedImage image = mxCellRenderer.createBufferedImage(graphAdapter, null, 1, null, true, null);
 
-            // Limitar dimensões (PARA DETETAR O ERRO)
-            if (image.getWidth() > 5000 || image.getHeight() > 5000) {
-                System.err.println("Dimensões da imagem excedem o limite permitido.");
-                return;
-            }
+            // Limitar dimensões
+            //if (image.getWidth() > 10000 || image.getHeight() > 10000) {
+            //    System.err.println("Dimensões da imagem excedem o limite permitido.");
+            //    return;
+            //}
 
             // Salva a imagem no disco
             File outputFile = new File("GestaodoTerritorio/src/main/images/grafo" + imgName + ".png");
