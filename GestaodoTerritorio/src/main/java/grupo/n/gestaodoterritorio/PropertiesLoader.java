@@ -3,6 +3,7 @@ package grupo.n.gestaodoterritorio;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.io.WKTReader;
+import grupo.n.gestaodoterritorio.comparators.ComparatorPairProperty;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
@@ -20,11 +21,8 @@ public class PropertiesLoader {
     private List<Property> propertiesList;
     private List<Owner> ownerList;
     //listas de apoio para sugestao de trocas
-    private List<Property> AUXsourceList;
-    private List<Property> AUXtargetList;
     private List<Proposal> suggestions; //lista para devolver todas as sugestoes de troca
-
-
+    private List<PairProperty> pairs; //guardar pares de propriedades e a sua area
 
     /**Construtor para leitura do ficheiro CSV*/
     public PropertiesLoader(String file) {
@@ -230,18 +228,14 @@ public class PropertiesLoader {
         2º passo- para cada adjacência, verificar (entre todas as duplas de propriedades possíveis, sendo uma de cada proprietário) se dois proprietários sao vizinhos em dois sítios
         3º passo - tendo as duplas de vizinhança, ver se nenhum proprietário perde 5% de área face a sua situação original
         4º passo - exprimir essa sugestao */
+        suggestions.clear();
         for (DefaultEdge edge : graph.edgeSet()) { //1ºPasso
             Owner source = graph.getEdgeSource(edge);// Obter os vértices conectados pela aresta (ou seja dois proprietarios com relacao de vizinhanca)
             Owner target = graph.getEdgeTarget(edge);
             int nr_propriedades_vizinhas = 0; //auxiliar para contar quantas vezes dois proprietarios sao vizinhos com diferentes propriedades
             List<Property> sourceList = source.getOwnerPropertyList();
             List<Property> targetList = target.getOwnerPropertyList();
-            double originalSourceArea = 0;
-            double originalTargetArea = 0;
-            //Limpa-se as listas de prop aux, para que o calculo efetuado para um novo caso de proprietarios
-            // seja feito sem as propriedades selecionadas na iteracao de proprietarios anterior
-            AUXsourceList.clear();
-            AUXtargetList.clear();
+            pairs.clear();
             for(Property property1 : sourceList){ //2ºPasso
                 for(Property property2 : targetList){
                         Geometry g1 = property1.getGeometry();
@@ -249,45 +243,48 @@ public class PropertiesLoader {
                         boolean intersects = g1.intersects(g2);
                         if (intersects) {
                             nr_propriedades_vizinhas++;
-                            AUXsourceList.add(property1);//guardar quais as propriedades vizinhas para poder fazer calculos com as suas areas
-                            AUXtargetList.add(property2);
-                            if(nr_propriedades_vizinhas==2){ //se forem vizinhos em dois sitios diferentes podemos sugerir uma troca
-                                break;
-                            }
+                            pairs.add(new PairProperty(property1, property2));
                         }
                 }
             }
-            if(nr_propriedades_vizinhas ==2 ){//se dois proprietarios sao vizinhos em dois sitios ver entao se nao existem perdas maiores q 0.05, para a troca ser viavel
-                for(Property property1 : AUXsourceList){
-                    originalSourceArea += property1.getShapeArea();
-                }
-                for(Property property2 : AUXtargetList){
-                    originalTargetArea += property2.getShapeArea();
-                }
-                if(fairExch(AUXsourceList, originalSourceArea, AUXtargetList, originalTargetArea)){ //3ºPasso
-                    Proposal sug = new Proposal(source, target, AUXsourceList, AUXtargetList); //4ºPasso
-                    suggestions.add(sug);
+            //ORDENAR AREAS das adjacencias
+            ComparatorPairProperty comp = new ComparatorPairProperty();
+            Collections.sort(pairs, comp);
+
+            //Ja ordenado, percorremos a lista a partir das maiores areas conjuntas e propomos a troca para a troca justa com maiores areas de adjacencias
+            if(nr_propriedades_vizinhas>1){ //temos que ter pelo menos duas adjacencias entre os 2 proprietarios
+                int i =0;
+                boolean hasSuggested = false;
+                while(!pairs.get(i+1).equals(null) && !hasSuggested){
+                    if(fairExch(pairs.get(i).getProperty1(),pairs.get(i+1).getProperty1(),pairs.get(i).getProperty2(),pairs.get(i+1).getProperty2())){
+                        Proposal sug = new Proposal(source,target,pairs.get(i).getProperty1(),pairs.get(i+1).getProperty1(),pairs.get(i).getProperty2(),pairs.get(i+1).getProperty2());
+                        suggestions.add(sug);
+                        hasSuggested = true;
+                    }
+                    i++;
                 }
             }
+
         }
         return suggestions;
     }
 
-    //Metodo para verificar que em nenhum dos casos nenhum proprietario perde mais do que 5% de area de forma a troca ser justa
-    public boolean fairExch(List<Property> sourceList, double sourceArea, List<Property> targetList, double targetArea){
-        double newSourceAreaExch1 = sourceList.get(0).getShapeArea() + targetList.get(0).getShapeArea() ;
-        double fair1 = Math.abs((newSourceAreaExch1-sourceArea)/sourceArea); //tera q ser menor q 0.05
-        double newTargetAreaExch1 = sourceList.get(1).getShapeArea() + targetList.get(1).getShapeArea() ;
-        double fair2 = Math.abs((newTargetAreaExch1-targetArea)/targetArea);
+    public boolean fairExch(Property sp1, Property sp2, Property tp1, Property tp2){
+        double originalSourceArea = sp1.getShapeArea()+ sp2.getShapeArea();
+        double originalTargetArea = tp1.getShapeArea()+ tp2.getShapeArea();
 
-        double newSourceAreaExch2 = sourceList.get(1).getShapeArea() + targetList.get(1).getShapeArea() ;
-        double fair3 = Math.abs((newSourceAreaExch2-sourceArea)/sourceArea);
-        double newTargetAreaExch2 = sourceList.get(0).getShapeArea() + targetList.get(0).getShapeArea() ;
-        double fair4 = Math.abs((newTargetAreaExch2-targetArea)/targetArea);
+        double newSourceAreaExch1 = sp1.getShapeArea() + tp1.getShapeArea();
+        double fair1 = Math.abs((newSourceAreaExch1-originalSourceArea)/originalSourceArea);
+        double newTargetAreaExch1 = sp2.getShapeArea() + tp2.getShapeArea();
+        double fair2 = Math.abs((newTargetAreaExch1-originalTargetArea)/originalTargetArea);
 
-        boolean isFair = (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05);
+        double newSourceAreaExch2 = sp2.getShapeArea() + tp2.getShapeArea();
+        double fair3 = Math.abs((newSourceAreaExch2-originalSourceArea)/originalSourceArea);
+        double newTargetAreaExch2 = sp1.getShapeArea() + tp1.getShapeArea();
+        double fair4 = Math.abs((newTargetAreaExch2-originalTargetArea)/originalTargetArea);
+
+        boolean isFair = (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05); //troca justa -> nao se pode perder mais do que 5%
         return isFair;
     }
-
 
 }
