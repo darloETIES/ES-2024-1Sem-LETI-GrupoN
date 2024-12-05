@@ -33,29 +33,15 @@ public class PropertiesLoader {
     }
 
     /**
-     * leitura de propriedades
-     * @return
+     * Leitura de propriedades do ficheiro dado
+     * @return Mapa com a propriedade lida e respetivo ID
      * @throws Exception
      */
     public Map<String, Property> readProperties() throws Exception /*Exception para que verifique se o caminho do ficheiro*/ {
-        /* Map<String, Property> properties = new HashMap<>();
-         * Mapa para guardar as propriedades lidas do ficheiro CSV
-         * Dois importantes identificadores:
-         *   - Chave (String), representa o ObjectID
-         *   - Valor (Propriedade, representa o objeta que encapsula todos os dados lidos da linha do ficheiro)
-         *
-         *  GeometryFactory gf = new GeometryFactory();
-         * Faz parte da biblioteca JTS e será usada para criar objetos geométricos
-         *
-         *  WKTReader reader = new WKTReader(gf);
-         * É o interpretador de GeometryFactory, converte geometrias de formato WKT em objetos Geometry
-         *
-         * Ex. de uso da linguagem WKT:
-         * MULTIPOLYGON (((299218.5204 3623637.4791, ...)))
-         */
-        Map<String, Property> properties = new HashMap<>();
-        GeometryFactory gf = new GeometryFactory();
-        WKTReader reader = new WKTReader(gf);
+
+        Map<String, Property> properties = new HashMap<>();//Mapa para guardar as propriedades lidas do ficheiro CSV, chave->ObjectID, Valor->Propriedade
+        GeometryFactory gf = new GeometryFactory(); //Faz parte da biblioteca JTS e será usada para criar objetos geométricos
+        WKTReader reader = new WKTReader(gf);//É o interpretador de GeometryFactory, converte geometrias de formato WKT em objetos Geometry
 
         FileReader fileReader = new FileReader(file);
 
@@ -82,7 +68,6 @@ public class PropertiesLoader {
             String wkt = record.get("geometry");
             Geometry geometry = reader.read(wkt);
 
-            //String owner = record.get("OWNER");
             String ownerId = record.get("OWNER");
             //acrescimo dos campos freguesia, concelho e ilha, nova versao no moodle
             String parish = record.get("Freguesia");
@@ -116,45 +101,44 @@ public class PropertiesLoader {
             // Associa a propriedade ao proprietário
             owner.addToOwnerPropertyList(property);
 
-
             System.out.println(property);
-            //System.out.println(objectID + " | " + owner);
-
-
-            //System.out.println("Owner: " + ownerId + "Ter esta propriedade: " + property + "Lista: " + propertiesList);
-
         }
-
         return properties;
     }
+
+    /**
+     * Leitura de proprietários através do mapa de propriedades
+     * @return Mapa com o ID do proprietário e o proprietário
+     * @throws Exception
+     */
     public Map<String, Owner> readOwners() throws Exception /*Exception para que verifique se o caminho do ficheiro*/ {
 
-        // Map to store the owners
+        // Mapa para guardar os proprietários
         Map<String, Owner> owners = new HashMap<>();
 
-        // Load properties first
+        // Carregamento das propriedades
         Map<String, Property> properties = readProperties();
 
-        // Iterate over all properties to associate them with their respective owners
+        //Iteração sobre todas as propriedades para as associar com os respetivos donos
         for (Property property : properties.values()) {
             String ownerId = property.getOwner().getOwnerID();
 
-            // Retrieve or create the Owner
+            //Obtem ou cria o proprietário
             Owner owner = owners.computeIfAbsent(ownerId, Owner::new);
 
-            // Add the property to the owner's property list
+            // Adiciona o proprietário à lista de proprietários
             owner.addToOwnerPropertyList(property);
         }
 
-        // Return the complete map of owners
+        // Retorna o mapa completo de proprietários
         return owners;
     }
     /**
-     * cálculo da área média das propriedades de uma dada região
-     * @param parish
-     * @param county
-     * @param district
-     * @return
+     * Cálculo da área média das propriedades de uma dada área geográfica
+     * @param parish Freguesia da propriedade
+     * @param county Concelho da propriedade
+     * @param district Distrito da propriedade
+     * @return Área média das propriedades da área geográfica
      */
     public double averageAreaProp(String parish, String county, String district) {
         double totalArea = 0;
@@ -175,10 +159,17 @@ public class PropertiesLoader {
         if (count == 0) {
             return 0; // Caso não haja propriedades que satisfaçam os critérios
         }
-
         return totalArea / count;
-
     }
+
+    /**
+     * Área média das propriedades de um proprietário numa dada área geográfica contando que duas propriedades vizinhas contam como uma
+     * @param parish Freguesia da propriedade
+     * @param county Concelho da propriedade
+     * @param district Distrito da propriedade
+     * @param ownerID ID do proprietário
+     * @return Área média das propriedades de um proprietário numa dada área geográfica
+     */
     public double averagePropAreaByOwner(String parish, String county, String district, String ownerID) {
         double totalArea = 0;
         int count = 0;
@@ -187,23 +178,17 @@ public class PropertiesLoader {
         Owner o = new Owner("-1");
         for(Owner owner : ownerList) { //foreach para encontrar o owner com o ownerID
             if (owner.getOwnerID().equals(ownerID)) {
-
                 o = owner;
                 System.out.println(o);
                 break; //Sai do ciclo quando encontra
             }
         }
-
         int intersectCounter = 0; //num de vizinhanças entre propriedades do mesmo proprietario
         int propInGeoAreaCounter = 0;
-
         for (Property property1 : o.getOwnerPropertyList()) {
-
             boolean matchesParish1 = property1.getParish().trim().equalsIgnoreCase(parish.trim());
             boolean matchesCounty1 = property1.getCounty().trim().equalsIgnoreCase(county.trim());
             boolean matchesDistrict1 = property1.getDistrict().trim().equalsIgnoreCase(district.trim());
-
-
 
             if(matchesParish1 && matchesCounty1 && matchesDistrict1) {
                 totalArea += property1.getShapeArea();
@@ -212,13 +197,10 @@ public class PropertiesLoader {
                 System.out.println("County: " + property1.getCounty() + " == " + county + " -> " + matchesCounty1);
                 System.out.println("District: " + property1.getDistrict() + " == " + district + " -> " + matchesDistrict1);
             }
-
             for (Property property2 : o.getOwnerPropertyList()) {
                 //if para evitar propriedades repetidas e simétricas( ou seja se propA e adjacente a propB nao e necessario verificar se propB e adjacente a propA
                 if (!property1.getObjectId().equals(property2.getObjectId()) && Integer.parseInt(property1.getObjectId())< Integer.parseInt(property2.getObjectId())) {
                     //verificar que as propriedades cumprem os requisitos (mesmo dono e area geografica de input)
-
-
                     boolean matchesParish2 = property2.getParish().trim().equalsIgnoreCase(parish.trim());
                     boolean matchesCounty2 = property2.getCounty().trim().equalsIgnoreCase(county.trim());
                     boolean matchesDistrict2 = property2.getDistrict().trim().equalsIgnoreCase(district.trim());
@@ -228,24 +210,11 @@ public class PropertiesLoader {
                     boolean intersects = g1.intersects(g2);
 
                     if (matchesParish1 && matchesCounty1 && matchesDistrict1 && matchesParish2 && matchesCounty2 && matchesDistrict2 && intersects ) {
-                        //se as propriedades forem do mesmo dono e area geografica e se tambem forem adjacentes
-                        //totalArea += property1.getShapeArea() + property2.getShapeArea();
-                        //count++; //sendo adjacentes soma se a contagem apenas uma unidade ja que o objetivo e contar propriedades adjacentes como sendo uma
                         intersectCounter++;
                     }
-                    else if(matchesParish1 && matchesCounty1 && matchesDistrict1 && matchesParish2 && matchesCounty2 && matchesDistrict2) {
-                        //se as propriedades forem do mesmo dono e area geografica, mas nao forem adjacentes
-                        //totalArea += property1.getShapeArea() + property2.getShapeArea();
-                        //count+=2; //nao sendo adjacente soma se a contagem duas propriedades
-                    }
-
                 }
-
             }
-
-
         }
-
 
         //num de propriedades do proprietario (conforme os criterios) =
         // = num de propriedades do proprietario na area geografica - num de vizinhanças entre essas propriedades
@@ -258,11 +227,14 @@ public class PropertiesLoader {
         System.out.println(intersectCounter);
         System.out.println(counter);
 
-
         return totalArea / counter;
-
     }
 
+    /**
+     * Método para dado um grafo de proprietários gerar sugestões de trocas para facilitar o aumento de área média das propriedades de um proprietário
+     * @param graph Grafo de proprietários sobre o qual são geradas as sugestões
+     * @return Lista de sugestões de troca
+     */
     public List<Proposal> exchSuggestions(SimpleGraph<Owner, DefaultEdge> graph){
         /*1º passo - passar por todas as adjacências do grafo de proprietários
         2º passo- para cada adjacência, verificar (entre todas as duplas de propriedades possíveis, sendo uma de cada proprietário) se dois proprietários sao vizinhos em dois sítios
@@ -309,6 +281,14 @@ public class PropertiesLoader {
         return suggestions;
     }
 
+    /**
+     * Verifica se uma troca de propriedades é justa
+     * @param sp1
+     * @param sp2
+     * @param tp1
+     * @param tp2
+     * @return
+     */
     public boolean fairExch(Property sp1, Property sp2, Property tp1, Property tp2){
         double originalSourceArea = sp1.getShapeArea()+ sp2.getShapeArea();
         double originalTargetArea = tp1.getShapeArea()+ tp2.getShapeArea();
@@ -323,8 +303,7 @@ public class PropertiesLoader {
         double newTargetAreaExch2 = sp1.getShapeArea() + tp1.getShapeArea();
         double fair4 = Math.abs((newTargetAreaExch2-originalTargetArea)/originalTargetArea);
 
-        boolean isFair = (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05); //troca justa -> nao se pode perder mais do que 5%
-        return isFair;
+        return (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05); //troca justa -> nao se pode perder mais do que 5%
     }
 
 }

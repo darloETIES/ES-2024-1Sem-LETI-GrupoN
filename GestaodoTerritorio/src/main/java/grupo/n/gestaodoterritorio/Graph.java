@@ -21,15 +21,16 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
     private SimpleGraph<V, DefaultEdge> graph;
 
     /**
-     * Construtor que inicializa o grafo vazio.
+     * Construtor de um grafo vazio.
      */
     public Graph() {
         this.graph = new SimpleGraph<>(DefaultEdge.class);
     }
 
+
     /**
-     * Constrói o grafo a partir de um mapa de vértices.
-     * @param elements Mapa contendo os vértices (Property ou Owner).
+     * Cria um gráfico com elementos do tipo V
+     * @param elements Mapa com objetos do tipo V
      */
     public void createGraph(Map<String, V> elements) {
         System.out.println("\nCreating graph:");
@@ -50,8 +51,10 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
     }
 
     /**
-     * Verifica se dois vértices possuem interseção.
-     * Este método é adaptado para diferentes tipos de vértices.
+     * Verifica interseções entre duas propriedades
+     * @param v1 Objeto
+     * @param v2 Objeto
+     * @return se os objetos v1 e v2 se intersetam
      */
     private boolean hasIntersection(V v1, V v2) {
         if (v1 instanceof Property && v2 instanceof Property) {
@@ -83,9 +86,10 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
         System.out.println("- " + graph.edgeSet().size() + " arestas.");
     }
 
+
     /**
-     * Desenha o grafo como uma imagem e salva no disco.
-     * @param imgName Nome do arquivo de saída.
+     * Desenha o grafo como uma imagem e salva no disco
+     * @param imgName Nome do arquivo de saída
      */
     public void drawGraph(String imgName) {
         try {
@@ -104,12 +108,6 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
 
             // Renderiza o grafo como imagem
             BufferedImage image = mxCellRenderer.createBufferedImage(graphAdapter, null, 1, null, true, null);
-
-            // Limitar dimensões
-            //if (image.getWidth() > 10000 || image.getHeight() > 10000) {
-            //    System.err.println("Dimensões da imagem excedem o limite permitido.");
-            //    return;
-            //}
 
             // Salva a imagem no disco
             File outputFile = new File("GestaodoTerritorio/src/main/images/grafo" + imgName + ".png");
