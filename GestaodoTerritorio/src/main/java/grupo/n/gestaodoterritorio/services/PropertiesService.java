@@ -31,9 +31,6 @@ public class PropertiesService {
         propertiesLoader = new PropertiesLoader(filePath);
         properties = propertiesLoader.readProperties();
         owners = propertiesLoader.readOwners();
-
-        //gerar de inicio o grafo dos owners (para as trocas)
-        generateOwnersGraph(owners);
     }
 
 
