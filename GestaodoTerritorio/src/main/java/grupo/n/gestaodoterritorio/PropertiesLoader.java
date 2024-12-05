@@ -28,6 +28,8 @@ public class PropertiesLoader {
         this.file = file;
         this.propertiesList = new ArrayList<>();
         this.ownerList = new ArrayList<>();
+        this.suggestions = new ArrayList<>(); // Inicializando a lista de sugestões
+        this.pairs = new ArrayList<>(); // Inicializando a lista de pares de propriedades
     }
 
     /**
@@ -293,7 +295,7 @@ public class PropertiesLoader {
             if(nr_propriedades_vizinhas>1){ //temos que ter pelo menos duas adjacencias entre os 2 proprietarios
                 int i =0;
                 boolean hasSuggested = false;
-                while(!pairs.get(i+1).equals(null) && !hasSuggested){
+                while (i + 1 < pairs.size() && !hasSuggested) { // Verificar se i + 1 é válido
                     if(fairExch(pairs.get(i).getProperty1(),pairs.get(i+1).getProperty1(),pairs.get(i).getProperty2(),pairs.get(i+1).getProperty2())){
                         Proposal sug = new Proposal(source,target,pairs.get(i).getProperty1(),pairs.get(i+1).getProperty1(),pairs.get(i).getProperty2(),pairs.get(i+1).getProperty2());
                         suggestions.add(sug);

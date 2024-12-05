@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="350.0" prefWidth="534.0" styleClass="main-content-panel" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo.n.gestaodoterritorio.controllers.SuggestedTradesPageViewController">
@@ -24,9 +23,9 @@
         </Label>
         <ScrollPane layoutX="54.0" layoutY="77.0" prefHeight="226.0" prefWidth="424.0" styleClass="trade-list-container" vbarPolicy="AS_NEEDED">
             <content>
-                <VBox prefWidth="410.0" spacing="7.0">
+                <VBox fx:id="tradeListContainer" prefWidth="410.0" spacing="7.0">
                     <children>
-                        <!-- Hbox da troca -> botão para aceder aos detalhes da troca sugerida -->
+                        <!-- Hbox da troca -> botão para aceder aos detalhes da troca sugerida (É GERADO PELO CONTROLLER ESTE É SÓ TEMPLATE) -->
                         <HBox fx:id="tradeButton" alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
                             <children>
                                 <Label text="Proprietário X" textFill="WHITE">
@@ -74,7 +73,7 @@
                </HBox>
                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="312.0" spacing="10.0" styleClass="sug-trade-details-sub-box-title">
                   <children>
-                     <Label text="Proprietário X" textFill="WHITE" wrapText="true">
+                     <Label fx:id="ownerSourceInTitle" text="Proprietário X" textFill="WHITE" wrapText="true">
                         <font>
                            <Font name="Microsoft JhengHei Light" size="18.0" />
                         </font>
@@ -83,7 +82,7 @@
                         </HBox.margin>
                      </Label>
                      <FontAwesomeIconView fill="WHITE" glyphName="EXCHANGE" size="25" />
-                     <Label text="Proprietário Y" textFill="WHITE" wrapText="true">
+                     <Label fx:id="ownerTargetInTitle" text="Proprietário Y" textFill="WHITE" wrapText="true">
                         <font>
                            <Font name="Microsoft JhengHei Light" size="18.0" />
                         </font>
@@ -109,7 +108,7 @@
                   <children>
                      <VBox alignment="CENTER" prefHeight="24.0" prefWidth="197.0">
                         <children>
-                           <Label text="(propriedades para X)" textFill="WHITE">
+                           <Label fx:id="sourceOwnerLabel1" text="(propriedades para X)" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa Bold" size="11.0" />
                               </font>
@@ -117,7 +116,7 @@
                                  <Insets bottom="10.0" />
                               </VBox.margin>
                            </Label>
-                           <Label text="Propriedade A" textFill="WHITE">
+                           <Label fx:id="sp1Label1" text="Propriedade A" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -128,7 +127,7 @@
                                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
                               </graphic>
                            </Label>
-                           <Label text="Propriedade B" textFill="WHITE">
+                           <Label fx:id="tp1Label1" text="Propriedade B" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -141,7 +140,7 @@
                      <Separator orientation="VERTICAL" prefHeight="200.0" />
                      <VBox alignment="CENTER" prefHeight="24.0" prefWidth="197.0">
                         <children>
-                           <Label text="(propriedades para Y)" textFill="WHITE">
+                           <Label fx:id="targetOwnerLabel1" text="(propriedades para Y)" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa Bold" size="11.0" />
                               </font>
@@ -149,7 +148,7 @@
                                  <Insets bottom="10.0" />
                               </VBox.margin>
                            </Label>
-                           <Label text="Propriedade C" textFill="WHITE">
+                           <Label fx:id="sp2Label1" text="Propriedade C" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -160,7 +159,7 @@
                                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
                               </graphic>
                            </Label>
-                           <Label text="Propriedade D" textFill="WHITE">
+                           <Label fx:id="tp2Label1" text="Propriedade D" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -191,7 +190,7 @@
                   <children>
                      <VBox alignment="CENTER" prefHeight="24.0" prefWidth="197.0">
                         <children>
-                           <Label text="(propriedades para X)" textFill="WHITE">
+                           <Label fx:id="sourceOwnerLabel2" text="(propriedades para X)" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa Bold" size="11.0" />
                               </font>
@@ -199,7 +198,7 @@
                                  <Insets bottom="10.0" />
                               </VBox.margin>
                            </Label>
-                           <Label text="Propriedade C" textFill="WHITE">
+                           <Label fx:id="sp2Label2" text="Propriedade C" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -210,7 +209,7 @@
                                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
                               </graphic>
                            </Label>
-                           <Label text="Propriedade D" textFill="WHITE">
+                           <Label fx:id="tp2Label2" text="Propriedade D" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -223,7 +222,7 @@
                      <Separator orientation="VERTICAL" prefHeight="200.0" />
                      <VBox alignment="CENTER" prefHeight="24.0" prefWidth="197.0">
                         <children>
-                           <Label text="(propriedades para Y)" textFill="WHITE">
+                           <Label fx:id="targetOwnerLabel2" text="(propriedades para Y)" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa Bold" size="11.0" />
                               </font>
@@ -231,7 +230,7 @@
                                  <Insets bottom="10.0" />
                               </VBox.margin>
                            </Label>
-                           <Label text="Propriedade A" textFill="WHITE">
+                           <Label fx:id="sp1Label2" text="Propriedade A" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>
@@ -242,7 +241,7 @@
                                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
                               </graphic>
                            </Label>
-                           <Label text="Propriedade B" textFill="WHITE">
+                           <Label fx:id="tp1Label2" text="Propriedade B" textFill="WHITE">
                               <font>
                                  <Font name="Microsoft PhagsPa" size="12.0" />
                               </font>

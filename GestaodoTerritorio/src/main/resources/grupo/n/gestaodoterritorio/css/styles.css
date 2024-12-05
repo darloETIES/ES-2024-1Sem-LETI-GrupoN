@@ -282,9 +282,9 @@
 .trade-list-container VBox{
     -fx-background-color: #202121;
     -fx-padding: 7px;
-
-
+    -fx-text-fill: white;
 }
+
 
 .trade-list-container .scroll-bar:vertical {
     -fx-background-color: #535353;

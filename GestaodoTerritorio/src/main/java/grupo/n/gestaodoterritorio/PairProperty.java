@@ -2,6 +2,7 @@ package grupo.n.gestaodoterritorio;
 
 import java.util.Objects;
 
+
 public class PairProperty {
     private Property property1;
     private Property property2;
