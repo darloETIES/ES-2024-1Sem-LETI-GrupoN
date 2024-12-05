@@ -1,15 +1,17 @@
 package grupo.n.gestaodoterritorio.services;
 
-import grupo.n.gestaodoterritorio.Owner;
-import grupo.n.gestaodoterritorio.PropertiesLoader;
-import grupo.n.gestaodoterritorio.Property;
+import grupo.n.gestaodoterritorio.*;
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleGraph;
 
+import java.util.List;
 import java.util.Map;
 
 public class PropertiesService {
 
     private static PropertiesService instance; // Instância única
     private PropertiesLoader propertiesLoader;
+    private Graph<Owner> graphOwners;
     private Map<String, Property> properties;
     private Map<String, Owner> owners;
 
@@ -62,5 +64,23 @@ public class PropertiesService {
             throw new IllegalStateException("Dados não foram carregados. Certifique-se de carregar os dados antes.");
         }
         return owners;
+    }
+
+    public List<Proposal> getExchSuggestions(SimpleGraph<Owner, DefaultEdge> graph){
+        if(propertiesLoader == null){
+            throw new IllegalStateException("Dados não foram carregados. Certifique-se de carregar os dados antes.");
+        }
+        return propertiesLoader.exchSuggestions(graph);
+    }
+
+
+    //fazer e obter o grafo dos owners para as trocas
+    public void generateOwnersGraph(Map<String, Owner> owners) {
+        graphOwners = new Graph();
+        graphOwners.createGraph(owners);
+    }
+
+    public SimpleGraph<Owner, DefaultEdge> getGraphOwners() {
+        return graphOwners.getGraph();
     }
 }

@@ -29,7 +29,7 @@
 
                     <!-- Campos de entrada -->
                     <VBox alignment="CENTER" maxWidth="280" spacing="10">
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="MAP_PIN" size="16" textAlignment="CENTER" wrappingWidth="16.0">
                            <HBox.margin>
@@ -38,8 +38,8 @@
                         </FontAwesomeIconView>
                               <TextField fx:id="parishField" prefHeight="31.0" prefWidth="247.0" promptText="Freguesia *" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="LOCATION_ARROW" size="16" textAlignment="CENTER" wrappingWidth="16.0">
                            <HBox.margin>
@@ -49,8 +49,8 @@
 
                               <TextField fx:id="countyField" prefWidth="247.0" promptText="Concelho *" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     </HBox>
+                     <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="MAP_ALT" size="16" textAlignment="CENTER" wrappingWidth="16.0">
                            <HBox.margin>
@@ -60,8 +60,8 @@
 
                               <TextField fx:id="districtField" prefWidth="247.0" promptText="Distrito *" />
                      </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     </HBox>
+                     <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="USER" size="16" textAlignment="CENTER" wrappingWidth="16.0">
                            <HBox.margin>
@@ -71,7 +71,7 @@
 
                               <TextField fx:id="ownerField" prefWidth="247.0" promptText="Proprietário (opcional)" />
                      </children>
-                  </HBox>
+                     </HBox>
                     </VBox>
 
                     <!-- Botão de submissão -->

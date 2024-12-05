@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import org.controlsfx.glyphfont.FontAwesome;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GestTerrApplication extends Application {
 
@@ -23,6 +25,8 @@ public class GestTerrApplication extends Application {
 
         try{
             PropertiesService.getInstance().loadProperties("GestaodoTerritorio/src/main/resources/Madeira-Moodle-1.1.csv");
+            Map<String, Owner> owners = PropertiesService.getInstance().getOwners();
+            PropertiesService.getInstance().generateOwnersGraph(owners);
         } catch (Exception e){
             e.printStackTrace();
             System.err.println("Erro ao carregar o ficheiro CSV!");
