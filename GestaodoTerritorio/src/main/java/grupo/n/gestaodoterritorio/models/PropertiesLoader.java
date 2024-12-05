@@ -1,4 +1,4 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
@@ -118,8 +118,6 @@ public class PropertiesLoader {
 
 
             System.out.println(property);
-            //System.out.println(objectID + " | " + owner);
-
 
             //System.out.println("Owner: " + ownerId + "Ter esta propriedade: " + property + "Lista: " + propertiesList);
 
@@ -228,15 +226,7 @@ public class PropertiesLoader {
                     boolean intersects = g1.intersects(g2);
 
                     if (matchesParish1 && matchesCounty1 && matchesDistrict1 && matchesParish2 && matchesCounty2 && matchesDistrict2 && intersects ) {
-                        //se as propriedades forem do mesmo dono e area geografica e se tambem forem adjacentes
-                        //totalArea += property1.getShapeArea() + property2.getShapeArea();
-                        //count++; //sendo adjacentes soma se a contagem apenas uma unidade ja que o objetivo e contar propriedades adjacentes como sendo uma
                         intersectCounter++;
-                    }
-                    else if(matchesParish1 && matchesCounty1 && matchesDistrict1 && matchesParish2 && matchesCounty2 && matchesDistrict2) {
-                        //se as propriedades forem do mesmo dono e area geografica, mas nao forem adjacentes
-                        //totalArea += property1.getShapeArea() + property2.getShapeArea();
-                        //count+=2; //nao sendo adjacente soma se a contagem duas propriedades
                     }
 
                 }
@@ -323,8 +313,8 @@ public class PropertiesLoader {
         double newTargetAreaExch2 = sp1.getShapeArea() + tp1.getShapeArea();
         double fair4 = Math.abs((newTargetAreaExch2-originalTargetArea)/originalTargetArea);
 
-        boolean isFair = (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05); //troca justa -> nao se pode perder mais do que 5%
-        return isFair;
+        return (fair1 < 0.05 && fair2 < 0.05 && fair3 < 0.05 && fair4 < 0.05); //retorna troca justa -> nao se pode perder mais do que 5%
+
     }
 
 }

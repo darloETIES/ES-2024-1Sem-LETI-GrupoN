@@ -1,24 +1,19 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 
 import com.mxgraph.layout.*;
-import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.util.mxCellRenderer;
-import com.vividsolutions.jts.geom.Geometry;
 import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.List;
 import java.util.Map;
 
 public class Graph<V> { // Classe genérica com <V> representando os vértices
-    private SimpleGraph<V, DefaultEdge> graph;
+    private final SimpleGraph<V, DefaultEdge> graph;
 
     /**
      * Construtor que inicializa o grafo vazio.
@@ -54,13 +49,9 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
      * Este método é adaptado para diferentes tipos de vértices.
      */
     private boolean hasIntersection(V v1, V v2) {
-        if (v1 instanceof Property && v2 instanceof Property) {
-            Property p1 = (Property) v1;
-            Property p2 = (Property) v2;
+        if (v1 instanceof Property p1 && v2 instanceof Property p2) {
             return p1.getGeometry().intersects(p2.getGeometry());
-        } else if (v1 instanceof Owner && v2 instanceof Owner) {
-            Owner o1 = (Owner) v1;
-            Owner o2 = (Owner) v2;
+        } else if (v1 instanceof Owner o1 && v2 instanceof Owner o2) {
 
             // Verifica interseções entre as propriedades dos proprietários
             for (Property p1 : o1.getOwnerPropertyList()) {

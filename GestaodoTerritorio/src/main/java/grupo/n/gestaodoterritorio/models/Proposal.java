@@ -1,6 +1,4 @@
-package grupo.n.gestaodoterritorio;
-
-import java.util.List;
+package grupo.n.gestaodoterritorio.models;
 
 public class Proposal {
     private Owner source;

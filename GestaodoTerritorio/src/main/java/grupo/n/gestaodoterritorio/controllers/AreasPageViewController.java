@@ -52,12 +52,17 @@ public class AreasPageViewController {
             return;
         }
 
+
+
+
         // Determinar qual método executar
         if (owner.isEmpty()) {
             handleWithoutProprietario(parish, county, district);
         } else {
             handleWithProprietario(parish, county, district, owner);
         }
+
+
     }
 
     private void handleWithProprietario(String parish, String county, String district, String owner) {
@@ -83,18 +88,24 @@ public class AreasPageViewController {
 
     private void showModal(String title, String parish, String county, String district, double averageArea) {
 
-        modalTitleLabel.setText(title);
+        //Caso a área seja 0, mostra como inexistente
+        if(averageArea <= 0){
+            showAlert("Erro!", "Área inexistente!");
+        }
+        else {
+            modalTitleLabel.setText(title);
 
-        modalParishLabel.setText(parish);
-        modalCountyLabel.setText(county);
-        modalDistrictLabel.setText(district);
+            modalParishLabel.setText(parish);
+            modalCountyLabel.setText(county);
+            modalDistrictLabel.setText(district);
 
-        // Arredondar a área média para 2 casas decimais
-        String formattedArea = String.format("%.2f", averageArea);
-        modalAverageAreaLabel.setText(formattedArea);
+            // Arredondar a área média para 2 casas decimais
+            String formattedArea = String.format("%.2f", averageArea);
+            modalAverageAreaLabel.setText(formattedArea);
 
-        // Exibir o modal
-        modalPane.setVisible(true);
+            // Exibir o modal
+            modalPane.setVisible(true);
+        }
     }
 
     @FXML

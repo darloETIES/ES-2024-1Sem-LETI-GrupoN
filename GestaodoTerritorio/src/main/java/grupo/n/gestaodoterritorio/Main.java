@@ -1,11 +1,10 @@
 package grupo.n.gestaodoterritorio;
 
-import org.jgrapht.ListenableGraph;
-import org.jgrapht.ext.JGraphXAdapter;
-import org.jgrapht.graph.DefaultEdge;
+import grupo.n.gestaodoterritorio.models.Graph;
+import grupo.n.gestaodoterritorio.models.Owner;
+import grupo.n.gestaodoterritorio.models.PropertiesLoader;
+import grupo.n.gestaodoterritorio.models.Property;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 

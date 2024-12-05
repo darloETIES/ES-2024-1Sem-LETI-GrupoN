@@ -21,7 +21,7 @@
                 <Font name="Microsoft JhengHei Light" size="20.0" />
             </font>
         </Label>
-        <ScrollPane layoutX="54.0" layoutY="77.0" prefHeight="226.0" prefWidth="424.0" styleClass="trade-list-container" vbarPolicy="AS_NEEDED">
+        <ScrollPane layoutX="54.0" layoutY="77.0" prefHeight="226.0" prefWidth="424.0" styleClass="trade-list-container">
             <content>
                 <VBox fx:id="tradeListContainer" prefWidth="410.0" spacing="7.0">
                     <children>

@@ -1,6 +1,5 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +18,7 @@ class PropertiesLoaderTest {
 
     @BeforeEach
     void setUp() throws FileNotFoundException, URISyntaxException {
+
         URL resourceUrl = getClass().getClassLoader().getResource("Madeira-Moodle-1.1.csv");
         if (resourceUrl != null) {
             String filePath = resourceUrl.getPath();  // Aqui usamos getPath() em vez de toString()

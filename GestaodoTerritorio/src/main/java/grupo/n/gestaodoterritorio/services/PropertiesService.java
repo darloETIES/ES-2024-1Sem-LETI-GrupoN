@@ -1,6 +1,6 @@
 package grupo.n.gestaodoterritorio.services;
 
-import grupo.n.gestaodoterritorio.*;
+import grupo.n.gestaodoterritorio.models.*;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
@@ -76,7 +76,7 @@ public class PropertiesService {
 
     //fazer e obter o grafo dos owners para as trocas
     public void generateOwnersGraph(Map<String, Owner> owners) {
-        graphOwners = new Graph();
+        graphOwners = new Graph<>();
         graphOwners.createGraph(owners);
     }
 

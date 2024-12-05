@@ -1,8 +1,8 @@
 package grupo.n.gestaodoterritorio.controllers;
 
-import grupo.n.gestaodoterritorio.Graph;
-import grupo.n.gestaodoterritorio.Owner;
-import grupo.n.gestaodoterritorio.Property;
+import grupo.n.gestaodoterritorio.models.Graph;
+import grupo.n.gestaodoterritorio.models.Owner;
+import grupo.n.gestaodoterritorio.models.Property;
 import grupo.n.gestaodoterritorio.services.PropertiesService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -25,6 +25,7 @@ public class GraphPageViewController {
     @FXML
     private Button btnReset;
 
+    @FXML
     private ToggleGroup graphButtons;
 
     @FXML

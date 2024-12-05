@@ -1,3 +1,25 @@
+.background-main{
+    -fx-background-color: rgba(50, 50, 50, 0.7);
+}
+
+.upload-file-box{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+}
+
+.upload-file-box Button{
+    -fx-background-color: rgb(57, 57, 57);
+    -fx-background-radius: 15px;
+    -fx-text-fill: white;
+    -fx-padding: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 0);
+}
+
+.upload-file-box Button:hover{
+    -fx-background-color: rgb(81, 81, 81);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
 
 .window-bar{
     -fx-background-color: #202121;

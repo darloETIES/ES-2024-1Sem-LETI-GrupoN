@@ -1,4 +1,4 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.io.ParseException;

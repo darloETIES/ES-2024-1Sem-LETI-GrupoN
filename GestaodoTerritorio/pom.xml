@@ -43,12 +43,30 @@
       <version>6.2.3</version>
     </dependency>
 
+    <!-- TestFX para BlackBoxTesting -->
+    <dependency>
+      <groupId>org.testfx</groupId>
+      <artifactId>testfx-core</artifactId>
+      <version>4.0.18</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testfx</groupId>
+      <artifactId>testfx-junit5</artifactId>
+      <version>4.0.18</version>
+      <scope>test</scope>
+    </dependency>
 
+
+
+
+    <!-- JUnit para WhiteBoxTesting -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>5.10.2</version>
     </dependency>
+
     <dependency>
       <groupId>com.vividsolutions</groupId>
       <artifactId>jts-core</artifactId>
@@ -150,12 +168,7 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>  </dependencies>
+</dependencies>
 
   <build>
     <plugins>
