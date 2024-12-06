@@ -1,6 +1,4 @@
-package grupo.n.gestaodoterritorio;
-
-import java.util.List;
+package grupo.n.gestaodoterritorio.models;
 
 public class Proposal {
     private Owner source;
@@ -12,6 +10,11 @@ public class Proposal {
     private String sourceExch1;
     private String sourceExch2;
     private String targetExch1;
+
+
+
+
+
     private String targetExch2;
 
     /**
@@ -32,11 +35,11 @@ public class Proposal {
         this.tp2 = tp2;
 
         System.out.println("Cenário 1: ");
-        this.sourceExch1 = "O proprietário " + source + "fica com as propriedades: " + sp1 + "e"+ tp1;
-        this.targetExch1 = "O proprietário" + target + "fica com as propriedades: " + sp2+ "e"+ tp2;
+        this.sourceExch1 = "O proprietário " + source + " fica com as propriedades: " + sp1 + " e "+ tp1;
+        this.targetExch1 = "O proprietário " + target + " fica com as propriedades: " + sp2 + " e "+ tp2;
         System.out.println("Cenário 2: ");
-        this.sourceExch2 = "O proprietário" + source + "fica com as propriedades: " + sp2 + "e"+ tp2;
-        this.targetExch2 = "O proprietário " + target + "fica com as propriedades: " + sp1+ "e"+ tp1;
+        this.sourceExch2 = "O proprietário " + source + " fica com as propriedades: " + sp2 + " e "+ tp2;
+        this.targetExch2 = "O proprietário " + target + " fica com as propriedades: " + sp1 + " e "+ tp1;
     }
 
     /**

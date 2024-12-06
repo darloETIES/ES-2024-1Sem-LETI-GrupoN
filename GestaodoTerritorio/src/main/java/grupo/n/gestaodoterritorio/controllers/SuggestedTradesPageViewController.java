@@ -2,12 +2,9 @@ package grupo.n.gestaodoterritorio.controllers;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import grupo.n.gestaodoterritorio.Graph;
-import grupo.n.gestaodoterritorio.Owner;
-import grupo.n.gestaodoterritorio.Proposal;
+import grupo.n.gestaodoterritorio.models.Owner;
+import grupo.n.gestaodoterritorio.models.Proposal;
 import grupo.n.gestaodoterritorio.services.PropertiesService;
-import javafx.animation.FadeTransition;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -16,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.util.Duration;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 

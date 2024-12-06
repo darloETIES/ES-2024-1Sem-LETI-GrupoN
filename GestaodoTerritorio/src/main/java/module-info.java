@@ -18,4 +18,6 @@ module grupo.n.gestaodoterritorio {
     exports grupo.n.gestaodoterritorio;
     exports grupo.n.gestaodoterritorio.controllers;
     opens grupo.n.gestaodoterritorio.controllers to javafx.fxml;
+    exports grupo.n.gestaodoterritorio.models;
+    opens grupo.n.gestaodoterritorio.models to javafx.fxml;
 }

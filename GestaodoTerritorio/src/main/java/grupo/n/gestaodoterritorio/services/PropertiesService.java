@@ -1,6 +1,6 @@
 package grupo.n.gestaodoterritorio.services;
 
-import grupo.n.gestaodoterritorio.*;
+import grupo.n.gestaodoterritorio.models.*;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
