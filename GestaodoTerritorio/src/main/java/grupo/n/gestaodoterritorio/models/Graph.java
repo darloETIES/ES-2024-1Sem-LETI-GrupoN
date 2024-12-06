@@ -1,20 +1,15 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 
 import com.mxgraph.layout.*;
-import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.util.mxCellRenderer;
-import com.vividsolutions.jts.geom.Geometry;
 import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultUndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.List;
 import java.util.Map;
 
 public class Graph<V> { // Classe genérica com <V> representando os vértices

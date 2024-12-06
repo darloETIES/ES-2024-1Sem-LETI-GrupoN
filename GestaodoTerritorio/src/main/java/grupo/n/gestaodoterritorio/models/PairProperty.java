@@ -1,4 +1,4 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 import java.util.Objects;
 

@@ -1,7 +1,6 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.MultiPolygon;
 
 public class Property {
     private String objectId;
@@ -106,6 +105,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return objectId +  " | " + owner ;
+        return objectId ;
     }
 }

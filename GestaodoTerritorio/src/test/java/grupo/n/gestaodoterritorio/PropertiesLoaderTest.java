@@ -1,6 +1,9 @@
 package grupo.n.gestaodoterritorio;
 
-import org.junit.jupiter.api.BeforeAll;
+
+import grupo.n.gestaodoterritorio.models.Owner;
+import grupo.n.gestaodoterritorio.models.PropertiesLoader;
+import grupo.n.gestaodoterritorio.models.Property;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +19,7 @@ class PropertiesLoaderTest {
     private String fileStr;
     private PropertiesLoader pLoader;
     private Map<String, Property> props;
+
 
     @BeforeEach
     void setUp() throws FileNotFoundException, URISyntaxException {
@@ -64,6 +68,16 @@ class PropertiesLoaderTest {
 
         //Caso em que a area geografica nao existe, sendo que a area tem de resultar em zero
         double averageAreaEmpty = pLoader.averageAreaProp("Avenidas Novas", "Lisboa", "Lisboa");
+        assertEquals(0, averageAreaEmpty, "Sendo que a area geografica não existe, a área terá que resultar zero");
+    }
+    @Test
+    void testAverageAreabyOwner() throws Exception {
+        pLoader.readOwners();
+        Owner o1=new Owner("50");
+        String o1s=o1.getOwnerID();
+        double averageArea = pLoader.averagePropAreaByOwner("Arco da Calheta", "Calheta", "Ilha da Madeira (Madeira)",o1s);
+        assertTrue(averageArea > 0, "A média da área deve ser maior que 0");
+        double averageAreaEmpty = pLoader.averagePropAreaByOwner("Avenidas Novas", "Lisboa", "Lisboa",o1s);
         assertEquals(0, averageAreaEmpty, "Sendo que a area geografica não existe, a área terá que resultar zero");
     }
 }

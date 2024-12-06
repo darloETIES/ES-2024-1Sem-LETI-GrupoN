@@ -1,18 +1,15 @@
 package grupo.n.gestaodoterritorio;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import grupo.n.gestaodoterritorio.models.Owner;
 import grupo.n.gestaodoterritorio.services.PropertiesService;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import org.controlsfx.glyphfont.FontAwesome;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 public class GestTerrApplication extends Application {

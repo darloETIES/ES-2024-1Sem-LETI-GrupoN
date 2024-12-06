@@ -1,6 +1,6 @@
 package grupo.n.gestaodoterritorio.comparators;
 
-import grupo.n.gestaodoterritorio.PairProperty;
+import grupo.n.gestaodoterritorio.models.PairProperty;
 
 import java.util.Comparator;
 

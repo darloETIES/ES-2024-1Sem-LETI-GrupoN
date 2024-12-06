@@ -2,9 +2,10 @@ package grupo.n.gestaodoterritorio;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.MultiPolygon;
-import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
+import grupo.n.gestaodoterritorio.models.Owner;
+import grupo.n.gestaodoterritorio.models.Property;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -76,7 +77,7 @@ class PropertyTest {
 
     @Test
     void testPropertyToString(){
-        String expected = "ObjectID: 1 | ParID: 7343148.0 | ParNum: 2996240000000 | Owner: 93 | Parish: Arco da Calheta | County: Calheta | District: Ilha da Madeira (Madeira)";
+        String expected = "1";
         assertEquals(expected, p.toString());
     }
 

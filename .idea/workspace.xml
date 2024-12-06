@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3749c6a-3ea1-456e-83ab-91a2235c0787" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/ProposalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/GestTerrApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/GestTerrApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/PairProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/PairProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/PropertiesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/PropertiesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/Proposal.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/Proposal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/comparators/ComparatorPairProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/comparators/ComparatorPairProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/GraphPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/GraphPageViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/SuggestedTradesPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/SuggestedTradesPageViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/services/PropertiesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/services/PropertiesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/areas-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/areas-page-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertiesLoaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertiesLoaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +42,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SergioSS2003&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/darloETIES/ES-2024-1Sem-LETI-GrupoN.git&quot;,
+    &quot;accountId&quot;: &quot;1d22eb14-29d3-408c-b2c6-0ecba2da762d&quot;
+  }
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -47,10 +73,21 @@
     "Application.GestTerrApplication.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
-    "JUnit.PropertiesLoaderTest.executor": "Run",
+    "JUnit.GraphTest.executor": "Coverage",
+    "JUnit.GraphTest.testCreateGraphOwners.executor": "Coverage",
+    "JUnit.PairPropertyTest.executor": "Coverage",
+    "JUnit.PairPropertyTest.testConstructorAndJointArea.executor": "Run",
+    "JUnit.PropertiesLoaderTest.executor": "Coverage",
+    "JUnit.PropertiesLoaderTest.readProperties.executor": "Run",
+    "JUnit.PropertiesLoaderTest.testAverageAreaProp.executor": "Run",
+    "JUnit.PropertiesLoaderTest.testAverageAreaPropByOwner.executor": "Run",
+    "JUnit.ProposalTest and 1 more.executor": "Coverage",
+    "JUnit.ProposalTest.executor": "Coverage",
+    "JUnit.gestaodoterritorio in GestaodoTerritorio.executor": "Coverage",
+    "JUnit.grupo.n.gestaodoterritorio in GestaodoTerritorio.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "gui__diogo(com__func__6)",
+    "git-widget-placeholder": "WhiteboxTesting(Sérgio)",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/SceneBuilder/SceneBuilder.exe",
     "list.type.of.created.stylesheet": "CSS",
@@ -69,34 +106,8 @@
       <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GestTerrApplication">
-    <configuration name="GestTerrApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.GestTerrApplication" />
-      <module name="GestaodoTerritorio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="grupo.n.gestaodoterritorio.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.Main" />
-      <module name="GestaodoTerritorio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PropertiesLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.gestaodoterritorio in GestaodoTerritorio">
+    <configuration name="PairPropertyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GestaodoTerritorio" />
       <extension name="coverage">
         <pattern>
@@ -105,17 +116,72 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio" />
-      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.PropertiesLoaderTest" />
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.PairPropertyTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PairPropertyTest.testConstructorAndJointArea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio" />
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.PairPropertyTest" />
+      <option name="METHOD_NAME" value="testConstructorAndJointArea" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProposalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio" />
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.ProposalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gestaodoterritorio in GestaodoTerritorio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="grupo.n.gestaodoterritorio in GestaodoTerritorio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GestTerrApplication" />
-        <item itemvalue="JUnit.PropertiesLoaderTest" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.gestaodoterritorio in GestaodoTerritorio" />
+        <item itemvalue="JUnit.PairPropertyTest" />
+        <item itemvalue="JUnit.PairPropertyTest.testConstructorAndJointArea" />
+        <item itemvalue="JUnit.grupo.n.gestaodoterritorio in GestaodoTerritorio" />
+        <item itemvalue="JUnit.ProposalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -140,15 +206,53 @@
       <workItem from="1732626874527" duration="33009000" />
       <workItem from="1732749633047" duration="27057000" />
       <workItem from="1732890093212" duration="7383000" />
-      <workItem from="1732991192840" duration="95359000" />
+      <workItem from="1732991192840" duration="76321000" />
+      <workItem from="1733323142764" duration="2114000" />
+      <workItem from="1733406228999" duration="1310000" />
+      <workItem from="1733407804639" duration="1982000" />
+      <workItem from="1733410989980" duration="2430000" />
+      <workItem from="1733477413781" duration="658000" />
+      <workItem from="1733484105119" duration="6230000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/PropertiesLoaderTest.java</url>
+          <line>82</line>
+          <properties class="grupo.n.gestaodoterritorio.PropertiesLoaderTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$PropertiesLoaderTest.ic" NAME="PropertiesLoaderTest Coverage Results" MODIFIED="1733324271557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$ProposalTest_and_1_more.ic" NAME="ProposalTest and 1 more Coverage Results" MODIFIED="1733487763397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$grupo_n_gestaodoterritorio_in_GestaodoTerritorio.ic" NAME="grupo.n.gestaodoterritorio in GestaodoTerritorio Coverage Results" MODIFIED="1733501155482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$ProposalTest.ic" NAME="ProposalTest Coverage Results" MODIFIED="1733499881838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphTest_testCreateGraphOwners.ic" NAME="GraphTest.testCreateGraphOwners Coverage Results" MODIFIED="1733320062767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1733324356548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$PropertiesLoaderTest.ic" NAME="PropertiesLoaderTest Coverage Results" MODIFIED="1733411037532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$gestaodoterritorio_in_GestaodoTerritorio.ic" NAME="gestaodoterritorio in GestaodoTerritorio Coverage Results" MODIFIED="1733501447042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$PairPropertyTest.ic" NAME="PairPropertyTest Coverage Results" MODIFIED="1733501419950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
     </SUITE>
   </component>

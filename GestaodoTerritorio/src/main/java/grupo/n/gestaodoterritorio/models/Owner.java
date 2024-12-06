@@ -1,4 +1,4 @@
-package grupo.n.gestaodoterritorio;
+package grupo.n.gestaodoterritorio.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,6 @@ public class Owner {
     }
 
     public String toString() {
-        return ownerID;
+        return ownerID ;
     }
 }
