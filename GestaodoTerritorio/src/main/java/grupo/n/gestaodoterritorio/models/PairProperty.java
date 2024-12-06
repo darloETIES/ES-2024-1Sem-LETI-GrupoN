@@ -76,11 +76,9 @@ public class PairProperty {
         if (this == pp) return true; // Se forem o mesmo objeto, são iguais
         if (pp == null || getClass() != pp.getClass()) return false; // Verifica o tipo
 
-        PairProperty that = (PairProperty) pp;
-
         // Verifica se os atributos são iguais
-        return Double.compare(that.jointArea, jointArea) == 0 &&
-                Objects.equals(property1, that.property1) &&
-                Objects.equals(property2, that.property2);
+        return Double.compare(pp.jointArea, jointArea) == 0 &&
+                Objects.equals(property1, pp.property1) &&
+                Objects.equals(property2, pp.property2);
     }
 }

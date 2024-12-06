@@ -75,7 +75,7 @@
                     </VBox>
 
                     <!-- Botão de submissão -->
-                    <Button onAction="#handleSubmit" styleClass="form-submit-btn" text="Submeter" />
+                    <Button fx:id="submitButton" onAction="#handleSubmit" styleClass="form-submit-btn" text="Submeter" />
                 </VBox>
             </children>
         </AnchorPane>
@@ -170,7 +170,7 @@
                </HBox>
 
                     <!-- Botão Fechar -->
-                    <Button onAction="#closeModal" styleClass="modal-button" text="Fechar" />
+                    <Button fx:id="closeModalButton" onAction="#closeModal" styleClass="modal-button" text="Fechar" />
                 </VBox>
             </children>
         </AnchorPane>

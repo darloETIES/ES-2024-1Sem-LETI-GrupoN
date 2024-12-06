@@ -26,7 +26,7 @@ public class SuggestedTradesPageViewController {
     private List<Proposal> proposalList = new ArrayList<>();
 
     @FXML
-    private VBox tradeListContainer; // Lista de propostas no painel esquerdo
+    private VBox tradeListContainer; // Lista de propostas
 
     @FXML
     private AnchorPane detailsPanel; // Painel de detalhes da troca
@@ -59,7 +59,7 @@ public class SuggestedTradesPageViewController {
         backButton.setOnAction(event -> detailsPanel.setVisible(false));
     }
 
-    private void loadTradeList() {
+    public void loadTradeList() {
 
         SimpleGraph<Owner, DefaultEdge> ownersGraph = PropertiesService.getInstance().getGraphOwners();
         proposalList = propertiesService.getExchSuggestions(ownersGraph);
@@ -90,7 +90,7 @@ public class SuggestedTradesPageViewController {
         }
     }
 
-    private void showDetails(Proposal proposal) {
+    public void showDetails(Proposal proposal) {
         detailsPanel.setVisible(true);
 
         ownerSourceInTitle.setText("Proprietário " + proposal.getSource().getOwnerID());
@@ -113,5 +113,18 @@ public class SuggestedTradesPageViewController {
         tp1Label2.setText("Propriedade " + proposal.getTp1().getObjectId());
 
 
+    }
+
+
+    public Label getOwnerSourceInTitle(){
+        return ownerSourceInTitle;
+    }
+
+    public Label getOwnerTargetInTitle(){
+        return ownerTargetInTitle;
+    }
+
+    public VBox getTradeListContainer(){
+        return tradeListContainer;
     }
 }

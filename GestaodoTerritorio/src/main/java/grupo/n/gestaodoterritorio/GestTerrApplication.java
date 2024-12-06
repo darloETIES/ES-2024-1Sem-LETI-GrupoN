@@ -20,16 +20,6 @@ public class GestTerrApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        try{
-            PropertiesService.getInstance().loadProperties("GestaodoTerritorio/src/main/resources/Madeira-Moodle-1.1.csv");
-            Map<String, Owner> owners = PropertiesService.getInstance().getOwners();
-            PropertiesService.getInstance().generateOwnersGraph(owners);
-        } catch (Exception e){
-            e.printStackTrace();
-            System.err.println("Erro ao carregar o ficheiro CSV!");
-            System.exit(1); //Sair da aplicação se falhar
-        }
-
         FXMLLoader fxmlLoader = new FXMLLoader(GestTerrApplication.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 577, 371);
 

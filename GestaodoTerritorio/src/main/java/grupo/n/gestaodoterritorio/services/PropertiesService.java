@@ -76,7 +76,7 @@ public class PropertiesService {
 
     //fazer e obter o grafo dos owners para as trocas
     public void generateOwnersGraph(Map<String, Owner> owners) {
-        graphOwners = new Graph();
+        graphOwners = new Graph<>();
         graphOwners.createGraph(owners);
     }
 

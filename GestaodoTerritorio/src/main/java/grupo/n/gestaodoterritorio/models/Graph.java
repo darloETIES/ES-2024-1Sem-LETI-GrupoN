@@ -13,7 +13,7 @@ import java.io.File;
 import java.util.Map;
 
 public class Graph<V> { // Classe genérica com <V> representando os vértices
-    private SimpleGraph<V, DefaultEdge> graph;
+    private final SimpleGraph<V, DefaultEdge> graph;
 
     /**
      * Construtor de um grafo vazio.
@@ -52,13 +52,9 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
      * @return se os objetos v1 e v2 se intersetam
      */
     private boolean hasIntersection(V v1, V v2) {
-        if (v1 instanceof Property && v2 instanceof Property) {
-            Property p1 = (Property) v1;
-            Property p2 = (Property) v2;
+        if (v1 instanceof Property p1 && v2 instanceof Property p2) {
             return p1.getGeometry().intersects(p2.getGeometry());
-        } else if (v1 instanceof Owner && v2 instanceof Owner) {
-            Owner o1 = (Owner) v1;
-            Owner o2 = (Owner) v2;
+        } else if (v1 instanceof Owner o1 && v2 instanceof Owner o2) {
 
             // Verifica interseções entre as propriedades dos proprietários
             for (Property p1 : o1.getOwnerPropertyList()) {
@@ -105,7 +101,7 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
             BufferedImage image = mxCellRenderer.createBufferedImage(graphAdapter, null, 1, null, true, null);
 
             // Salva a imagem no disco
-            File outputFile = new File("GestaodoTerritorio/src/main/images/grafo" + imgName + ".png");
+            File outputFile = new File("GestaodoTerritorio/src/main/resources/images/grafo" + imgName + ".png");
             outputFile.getParentFile().mkdirs();
             ImageIO.write(image, "PNG", outputFile);
 

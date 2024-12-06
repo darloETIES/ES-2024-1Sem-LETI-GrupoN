@@ -36,7 +36,7 @@
                 </Button>
 
                 <!-- Mensagem quando nenhuma imagem está carregada -->
-                <VBox fx:id="noImageContainer" alignment="CENTER" spacing="10.0" visible="true">
+                <VBox fx:id="noImageContainer" alignment="CENTER" spacing="10.0">
                     <FontAwesomeIconView fill="#939393" glyphName="FILE_IMAGE_ALT" size="35" />
                     <Label style="-fx-font-size: 14px; -fx-text-fill: #939393;" text="Imagem não carregada" />
                     <Label style="-fx-font-size: 10px; -fx-text-fill: #939393; -fx-font-weight: bold" text="Interaja com os botões em &quot;Visualizador de Grafos&quot;" />
@@ -57,7 +57,7 @@
                         <Insets bottom="50.0" />
                     </VBox.margin>
                 </Label>
-                <ToggleButton fx:id="btnPropriedades" alignment="CENTER" mnemonicParsing="false" styleClass="graph-viewer-btn" text="Propriedades" textAlignment="CENTER">
+                <ToggleButton fx:id="btnPropriedades" mnemonicParsing="false" styleClass="graph-viewer-btn" text="Propriedades" textAlignment="CENTER">
                     <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="18" />
                     </graphic>
@@ -68,7 +68,7 @@
                         <ToggleGroup fx:id="graphButtons" />
                     </toggleGroup>
                 </ToggleButton>
-                <ToggleButton fx:id="btnProprietarios" alignment="CENTER" mnemonicParsing="false" styleClass="graph-viewer-btn" text="Proprietários" textAlignment="CENTER" toggleGroup="$graphButtons">
+                <ToggleButton fx:id="btnProprietarios" mnemonicParsing="false" styleClass="graph-viewer-btn" text="Proprietários" textAlignment="CENTER" toggleGroup="$graphButtons">
                     <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="USER" size="18" />
                     </graphic>
