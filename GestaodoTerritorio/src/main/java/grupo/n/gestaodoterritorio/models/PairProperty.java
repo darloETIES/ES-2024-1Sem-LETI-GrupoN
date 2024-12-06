@@ -10,8 +10,8 @@ public class PairProperty {
 
     /**
      * Método utilizado para guardar uma adjacência entre duas propriedades e respetiva área total
-     * @param property1
-     * @param property2
+     * @param property1 Propriedade pertencente a uma adjacência
+     * @param property2 Propriedade pertencente a uma adjacência
      */
     public PairProperty(Property property1, Property property2) {
         this.property1 = property1;
@@ -20,7 +20,7 @@ public class PairProperty {
     }
 
     /**
-     *
+     * Obtém uma propriedade de um par de propriedades
      * @return Proriedade pertencente a uma adjacência
      */
     public Property getProperty1() {
@@ -36,7 +36,7 @@ public class PairProperty {
     }
 
     /**
-     *
+     *Obtém uma propriedade de um par de propriedades
      * @return Propriedade pertencente a uma adjacência
      */
     public Property getProperty2() {
@@ -52,7 +52,7 @@ public class PairProperty {
     }
 
     /**
-     *
+     *Obtém o valor da área total de duas propriedades adjacentes
      * @return Valor da área total de duas propriedades adjacentes
      */
     public double getJointArea(){

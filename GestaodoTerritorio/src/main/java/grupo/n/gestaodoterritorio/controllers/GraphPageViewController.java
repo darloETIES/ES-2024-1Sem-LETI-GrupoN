@@ -42,6 +42,9 @@ public class GraphPageViewController {
     private double initialMouseX;
     private double initialMouseY;
 
+    /**
+     * Prepara a janela para a interação com o utilizador
+     */
     @FXML
     public void initialize() {
 
@@ -93,13 +96,20 @@ public class GraphPageViewController {
 
     }
 
-    // Método para verificar se a imagem existe no diretório /images
+    /**
+     * Método para verificar se a imagem existe no diretório /images
+     * @param imageName Nome da imagem
+     * @return boolean da existência da imagem
+     */
     public boolean imageExists(String imageName) {
         File imageFile = new File("GestaodoTerritorio/src/main/resources/images/grafo" + imageName + ".png");
         return imageFile.exists();
     }
 
-    // Método para carregar ou gerar a imagem
+    /**
+     * Método para carregar ou gerar a imagem
+     * @param imgName Nome da imagem
+     */
     @FXML
     public void setImage(String imgName) {
         File imageFile = new File("GestaodoTerritorio/src/main/resources/images/grafo" + imgName + ".png");
@@ -135,6 +145,9 @@ public class GraphPageViewController {
         }
     }
 
+    /**
+     * Retorna a visualização da imagem do grafo à posição original
+     */
     @FXML
     public void handleReset() {
         // Resetando a posição da imagem
@@ -147,7 +160,10 @@ public class GraphPageViewController {
         graphImageView.setScaleY(zoomFactor);
     }
 
-    // Método de zoom: aumentar/diminuir a imagem com rolagem do mouse
+    /**
+     * Método de zoom: aumentar/diminuir a imagem com rolagem do rato
+     * @param event Input scroll do rato
+     */
     private void handleZoom(ScrollEvent event) {
         if (event.getDeltaY() > 0) {
             zoomFactor *= 1.1; // Zoom in
@@ -162,12 +178,20 @@ public class GraphPageViewController {
         event.consume();  // Impedir que o evento seja propagado
     }
 
-    // Iniciar o movimento da imagem com o mouse
+
+    /**
+     * Iniciar o movimento da imagem com o rato
+     * @param event Deteta o movimento do rato
+     */
     private void startDragging(MouseEvent event) {
         initialMouseX = event.getSceneX();
         initialMouseY = event.getSceneY();
     }
 
+    /**
+     * Arrastar a imagem com o rato
+     * @param event Deteta o arrastar do rato
+     */
     // Mover a imagem enquanto o mouse é arrastado
     private void dragImage(MouseEvent event) {
         double deltaX = event.getSceneX() - initialMouseX;
@@ -182,6 +206,9 @@ public class GraphPageViewController {
         initialMouseY = event.getSceneY();
     }
 
+    /**
+     * Decide que String envia para a setImage (através dos botões da interface gráfica)
+     */
     @FXML
     public void handleSubmit() {
         // Definir o nome da imagem com base no botão pressionado
@@ -198,19 +225,31 @@ public class GraphPageViewController {
     }
 
 
-
+    /**
+     * Obtém o botão das propriedades
+     * @return Botão das propriedades
+     */
     public ToggleButton getBtnPropriedades(){
         return btnPropriedades;
     }
-
+    /**
+     * Obtém o botão dos proprietários
+     * @return Botão dos proprietários
+     */
     public ToggleButton getBtnProprietarios(){
         return btnProprietarios;
     }
-
+    /**
+     * Obtém o visualizador da imagem do grafo
+     * @return Visualizador da imagem do grafo
+     */
     public ImageView getGraphImageView(){
         return graphImageView;
     }
-
+    /**
+     * Obtém a janela default (quando não há seleção de imagens a visualizar)
+     * @return Janela default
+     */
     public VBox getNoImageContainer(){
         return noImageContainer;
     }

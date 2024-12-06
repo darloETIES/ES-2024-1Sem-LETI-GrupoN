@@ -17,7 +17,7 @@ public class Owner {
     }
 
     /**
-     *
+     * Obtém o ID de um proprietário
      * @return ID de um proprietário
      */
     public String getOwnerID() {
@@ -33,7 +33,7 @@ public class Owner {
     }
 
     /**
-     *
+     * Obtém as lista de propriedades de um proprietário
      * @return Lista de propriedades de um proprietário
      */
     public List<Property> getOwnerPropertyList() {

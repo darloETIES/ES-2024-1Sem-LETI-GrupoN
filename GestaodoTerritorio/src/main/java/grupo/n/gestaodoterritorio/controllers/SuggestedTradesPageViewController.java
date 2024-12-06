@@ -42,7 +42,9 @@ public class SuggestedTradesPageViewController {
     private Button backButton;
 
 
-
+    /**
+     * Prepara a interação com o utlizador
+     */
     @FXML
     public void initialize() {
 
@@ -59,6 +61,9 @@ public class SuggestedTradesPageViewController {
         backButton.setOnAction(event -> detailsPanel.setVisible(false));
     }
 
+    /**
+     * Carrega as trocas sugeridas para um painel vertical
+     */
     public void loadTradeList() {
 
         SimpleGraph<Owner, DefaultEdge> ownersGraph = PropertiesService.getInstance().getGraphOwners();
@@ -90,6 +95,10 @@ public class SuggestedTradesPageViewController {
         }
     }
 
+    /**
+     * Mostra um sub-painel com os detalhes da sugestão de troca selecionada
+     * @param proposal Sugestão de troca selecionada
+     */
     public void showDetails(Proposal proposal) {
         detailsPanel.setVisible(true);
 
@@ -115,15 +124,25 @@ public class SuggestedTradesPageViewController {
 
     }
 
-
+    /**
+     * Obtém o Label que contém o proprietário source
+     * @return Label que contém o proprietário source
+     */
     public Label getOwnerSourceInTitle(){
         return ownerSourceInTitle;
     }
-
+    /**
+     * Obtém o Label que contém o proprietário target
+     * @return Label que contém o proprietário target
+     */
     public Label getOwnerTargetInTitle(){
         return ownerTargetInTitle;
     }
 
+    /**
+     * Obtém o painel vertical que contém todas trocas sugeridas
+     * @return Painel vertical que contém todas as trocas sugeridas
+     */
     public VBox getTradeListContainer(){
         return tradeListContainer;
     }

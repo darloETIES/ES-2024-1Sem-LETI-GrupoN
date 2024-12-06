@@ -17,6 +17,11 @@ public class GestTerrApplication extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
+    /**
+     * Inicia a aplicação
+     * @param stage Janela a carregar
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
 

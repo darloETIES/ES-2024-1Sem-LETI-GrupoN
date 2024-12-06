@@ -50,6 +50,9 @@ public class MainViewController {
 
     private File file; // Usado maioritariamente em BlackBoxTesting
 
+    /**
+     * Prepara a interação com o utilizador (começando na janela de upload do ficheiro)
+     */
     @FXML
     private void initialize() {
 
@@ -72,6 +75,10 @@ public class MainViewController {
         });
     }
 
+    /**
+     * Método responsável por carregar o ficheiro
+     * @throws Exception
+     */
     @FXML
     private void loadFile() throws Exception {
         File file;
@@ -87,8 +94,6 @@ public class MainViewController {
 
             file = fileChooser.showOpenDialog(mainContentPanel.getScene().getWindow());
         }
-
-
 
         if (file != null) {
             // Adiciona uma animação de carregamento enquanto o processamento ocorre
@@ -120,36 +125,58 @@ public class MainViewController {
             System.out.println("Nenhum ficheiro foi selecionado.");
         }
     }
+
+    /**
+     * Começo da animação de carregamento
+     */
     private void startLoadingAnimation() {
         loadingIndicator.setVisible(true);
     }
 
+    /**
+     * Fecho da animação de carregamento
+     */
     private void stopLoadingAnimation() {
         loadingIndicator.setVisible(false);
     }
 
+    /**
+     * Mostra mensagem de erro
+     * @param message
+     */
     private void showError(String message) {
         //mostra uma mensagem de erro
         System.err.println(message);
     }
 
-
-    //métodos que carregam a view escolhida pelo menu lateral
+    /**
+     * Método que carrega a view do visualizador de grafos pela seleção do botão correspondente
+     */
     @FXML
     private void loadGraphPageView() {
         loadContent("/grupo/n/gestaodoterritorio/graph-page-view.fxml");
     }
 
+    /**
+     * Método que carrega a view das áreas geográficas pela seleção do botão correspondente
+     */
     @FXML
     private void loadAreasPageView() {
         loadContent("/grupo/n/gestaodoterritorio/areas-page-view.fxml");
     }
 
+    /**
+     * Método que carrega a view das trocas sugeridas pela seleção do botão correspondente
+     */
     @FXML
     private void loadSuggestedTradesPageView() {
         loadContent("/grupo/n/gestaodoterritorio/sug-trades-page-view.fxml");
     }
 
+    /**
+     * Carrega a view selecionada no menu lateral em uma AnchorPane
+     * @param fxmlPath Caminho para a view
+     */
     private void loadContent(String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
@@ -163,8 +190,9 @@ public class MainViewController {
     }
 
 
-
-    //metodos para personalizações e animações da janela (expandir e colapsar com animação)
+    /**
+     * Método para expandir o menu com o uso de uma animação
+     */
     private void expandMenu() {
         Timeline expandTimeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(sideLeftMenu.prefWidthProperty(), COLLAPSED_WIDTH, Interpolator.EASE_IN)),
@@ -173,7 +201,9 @@ public class MainViewController {
 
         expandTimeline.play();
     }
-
+    /**
+     * Método para colapsar o menu com o uso de uma animação
+     */
     private void collapseMenu() {
         Timeline collapseTimeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(sideLeftMenu.prefWidthProperty(), EXPANDED_WIDTH, Interpolator.EASE_OUT)),
@@ -184,31 +214,58 @@ public class MainViewController {
         collapseTimeline.play();
     }
 
+    /**
+     * Fecha a aplicação
+     */
     @FXML
     private void closeApp() {
         System.exit(0);
     }
 
+    /**
+     * Define o valor de file
+     * @param file Novo valor de file
+     */
     public void setFile(File file) {
         this.file = file;
     }
 
+    /**
+     * Obtém o botão de upload do ficheiro
+     * @return Botão de upload do ficheiro
+     */
     public Button getUploadFileBtn(){
         return uploadFileBtn;
     }
 
+    /**
+     * Obtém o painel de upload do ficheiro
+     * @return Painel de upload do ficheiro
+     */
     public AnchorPane getUploadPane(){
         return uploadPane;
     };
 
+    /**
+     * Obtém o background de upload do ficheiro
+     * @return Background de upload do ficheiro
+     */
     public AnchorPane getUploadBackgroundPane(){
         return uploadBackgroundPane;
     }
 
+    /**
+     * Obtém o painel com a barra de carregamento de upload do ficheiro
+     * @return Painel com a barra de carregamento de upload do ficheiro
+     */
     public StackPane getLoadingIndicator(){
         return loadingIndicator;
     }
 
+    /**
+     * Obtém o painel do conteúdo principal
+     * @return Painel do conteúdo principal
+     */
     public AnchorPane getContentPanel() {
         return contentPanel;
     }

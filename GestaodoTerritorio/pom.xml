@@ -81,14 +81,6 @@
     </dependency>
 
 
-    <!-- Geopackage -->
-    <!-- https://mvnrepository.com/artifact/mil.nga.geopackage/geopackage -->
-    <dependency>
-      <groupId>mil.nga.geopackage</groupId>
-      <artifactId>geopackage</artifactId>
-      <version>6.6.5</version>
-    </dependency>
-
 
     <!-- Apache Commons CSV -> para leitura e escrita de ficheiros .csv -->
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
@@ -168,7 +160,13 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-</dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.10.5</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>

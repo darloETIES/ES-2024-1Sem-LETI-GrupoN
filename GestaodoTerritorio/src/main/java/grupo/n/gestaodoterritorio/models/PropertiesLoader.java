@@ -283,11 +283,11 @@ public class PropertiesLoader {
 
     /**
      * Verifica se uma troca de propriedades é justa
-     * @param sp1
-     * @param sp2
-     * @param tp1
-     * @param tp2
-     * @return
+     * @param sp1 Propriedade pertencente ao primeiro dono
+     * @param sp2 Propriedade pertencente ao primeiro dono
+     * @param tp1 Propriedade pertencente ao segundo dono
+     * @param tp2 Propriedade pertencente ao segundo dono
+     * @return Boolean sobre a justiça de uma troca de propriedades
      */
     public boolean fairExch(Property sp1, Property sp2, Property tp1, Property tp2){
         double originalSourceArea = sp1.getShapeArea()+ sp2.getShapeArea();
