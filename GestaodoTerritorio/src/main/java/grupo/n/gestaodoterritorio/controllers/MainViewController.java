@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
@@ -42,9 +43,13 @@ public class MainViewController {
     @FXML
     private AnchorPane uploadBackgroundPane;
 
+    @FXML
+    private StackPane loadingIndicator;
 
     private static final double COLLAPSED_WIDTH = 45.0;
     private static final double EXPANDED_WIDTH = 110.0;
+
+    private File file; // Usado maioritariamente em BlackBoxTesting
 
     @FXML
     private void initialize() {
@@ -70,27 +75,65 @@ public class MainViewController {
 
     @FXML
     private void loadFile() throws Exception {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Escolha um ficheiro CSV para carregar");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV Files", "*.csv")
-        );
-        File file = fileChooser.showOpenDialog(mainContentPanel.getScene().getWindow());
+        File file;
+        if(this.file != null) { //verificar se o ficheiro inicialmente está vazio
+            file = this.file;
+        }
+        else{
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Escolha um ficheiro CSV para carregar");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("CSV Files", "*.csv")
+            );
 
-        if(file != null){
-            PropertiesService.getInstance().loadProperties(file.getAbsolutePath());
-            Map<String, Owner> owners = PropertiesService.getInstance().getOwners();
-            PropertiesService.getInstance().generateOwnersGraph(owners);
-            // Ocultar o uploadPane após carregar o arquivo
-            uploadPane.setVisible(false);
-            uploadBackgroundPane.setVisible(false);
-            contentPanel.setEffect(null);
-            System.out.println("Ficheiro carregado com sucesso!");
+            file = fileChooser.showOpenDialog(mainContentPanel.getScene().getWindow());
+        }
+
+
+
+        if (file != null) {
+            // Adiciona uma animação de carregamento enquanto o processamento ocorre
+            startLoadingAnimation();
+
+            // Processo em uma thread separada para não travar a interface
+            new Thread(() -> {
+                try {
+                    PropertiesService.getInstance().loadProperties(file.getAbsolutePath());
+                    Map<String, Owner> owners = PropertiesService.getInstance().getOwners();
+                    PropertiesService.getInstance().generateOwnersGraph(owners);
+
+                    // Atualiza interface no JavaFX Application Thread
+                    javafx.application.Platform.runLater(() -> {
+                        stopLoadingAnimation();
+                        uploadPane.setVisible(false);
+                        uploadBackgroundPane.setVisible(false);
+                        contentPanel.setEffect(null);
+                        System.out.println("Ficheiro carregado com sucesso!");
+                    });
+                } catch (Exception e) {
+                    javafx.application.Platform.runLater(() -> {
+                        stopLoadingAnimation();
+                        showError("Erro ao carregar o ficheiro: " + e.getMessage());
+                    });
+                }
+            }).start();
         } else {
-            // Opcional: Informar que o usuário cancelou a seleção
             System.out.println("Nenhum ficheiro foi selecionado.");
         }
     }
+    private void startLoadingAnimation() {
+        loadingIndicator.setVisible(true);
+    }
+
+    private void stopLoadingAnimation() {
+        loadingIndicator.setVisible(false);
+    }
+
+    private void showError(String message) {
+        //mostra uma mensagem de erro
+        System.err.println(message);
+    }
+
 
     //métodos que carregam a view escolhida pelo menu lateral
     @FXML
@@ -145,5 +188,29 @@ public class MainViewController {
     @FXML
     private void closeApp() {
         System.exit(0);
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public Button getUploadFileBtn(){
+        return uploadFileBtn;
+    }
+
+    public AnchorPane getUploadPane(){
+        return uploadPane;
+    };
+
+    public AnchorPane getUploadBackgroundPane(){
+        return uploadBackgroundPane;
+    }
+
+    public StackPane getLoadingIndicator(){
+        return loadingIndicator;
+    }
+
+    public AnchorPane getContentPanel() {
+        return contentPanel;
     }
 }
