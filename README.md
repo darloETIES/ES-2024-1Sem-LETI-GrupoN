@@ -4,7 +4,7 @@ Este repositório contém o projeto de Engenharia de Software desenvolvido pelo 
 
 ## Membros do Grupo
 
-- **Diogo Lourenço** - Nº10518
+- **Diogo Lourenço** - Nº106518
 - **Tiago Inácio** - Nº110890
 - **Sérgio Silva** - Nº111052
 
