@@ -112,6 +112,7 @@ public class AreasPageViewController {
     private void closeModal() {
         //Fecha o modal
         modalPane.setVisible(false);
+        System.out.println("Visibilidade do modal: " + modalPane.isVisible());
     }
 
     private void showAlert(String title, String message) {
@@ -120,5 +121,9 @@ public class AreasPageViewController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public Label getModalTitleLabel(){
+        return modalTitleLabel;
     }
 }

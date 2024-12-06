@@ -8,11 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3749c6a-3ea1-456e-83ab-91a2235c0787" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/images/grafoOwners.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/images/grafoOwners.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/images/grafoProperties.png" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/images/grafoProperties.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/AreasPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/AreasPageViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/GraphPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/GraphPageViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/controllers/MainViewControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/controllers/MainViewControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/SuggestedTradesPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/controllers/SuggestedTradesPageViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/java/grupo/n/gestaodoterritorio/models/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/areas-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/areas-page-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestaodoTerritorio/src/main/resources/grupo/n/gestaodoterritorio/sug-trades-page-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +61,16 @@
     "Application.GestTerrApplication.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
+    "JUnit.AreasPageViewControllerTest.executor": "Coverage",
+    "JUnit.GraphPageViewControllerTest.executor": "Run",
+    "JUnit.GraphPageViewControllerTest.testInitialize.executor": "Coverage",
+    "JUnit.GraphPageViewControllerTest.testResetButton.executor": "Coverage",
+    "JUnit.GraphPageViewControllerTest.testSelectPropriedadesButton.executor": "Run",
+    "JUnit.GraphPageViewControllerTest.testSelectProprietariosButton.executor": "Run",
     "JUnit.MainViewControllerTest.executor": "Run",
     "JUnit.PropertiesLoaderTest.executor": "Run",
+    "JUnit.SuggestedTradesPageViewControllerTest.executor": "Run",
+    "JUnit.controllers in GestaodoTerritorio.executor": "Run",
     "PROFILE_TREE_MAP_2": "0.66855127",
     "PROJECT_CATEGORY_CHART": "0.47420496",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -65,7 +79,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "blackboxtesting__diogo",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/SceneBuilder/SceneBuilder.exe",
+    "last_opened_file_path": "C:/Users/Diogo/Desktop/ISCTEStuff/ES/ProjetoES/ES-2024-1Sem-LETI-GrupoN/GestaodoTerritorio/src/main/resources",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,28 +91,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\Diogo\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
-        <option name="reportGuid" value="ca821ec1-c672-4560-b777-b9b40c9b3eb9" />
-        <option name="reportName" value="ES-2024-1Sem-LETI-GrupoN/qodana/2024-12-05" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
-  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="C:\Users\Diogo\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="ca821ec1-c672-4560-b777-b9b40c9b3eb9" reportId="ES-2024-1Sem-LETI-GrupoN/qodana/2024-12-05" />
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\images" />
+      <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources" />
       <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources\grupo\n\gestaodoterritorio\css" />
       <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources\grupo\n\gestaodoterritorio" />
-      <recent name="C:\Users\Diogo\Desktop\ISCTEStuff\ES\ProjetoES\ES-2024-1Sem-LETI-GrupoN\GestaodoTerritorio\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -110,13 +116,13 @@
       <recent name="grupo.n.gestaodoterritorio.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainViewControllerTest">
+  <component name="RunManager" selected="JUnit.controllers in GestaodoTerritorio">
     <configuration name="GestTerrApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.GestTerrApplication" />
       <module name="GestaodoTerritorio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="grupo.n.gestaodoterritorio.controllers.*" />
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,20 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.Main" />
-      <module name="GestaodoTerritorio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="grupo.n.gestaodoterritorio.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainViewControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AreasPageViewControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GestaodoTerritorio" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +139,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio.controllers" />
-      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.controllers.MainViewControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.controllers.AreasPageViewControllerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea --add-opens=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED " />
@@ -154,17 +147,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PropertiesLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphPageViewControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GestaodoTerritorio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="grupo.n.gestaodoterritorio.models.*" />
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio.models" />
-      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.models.PropertiesLoaderTest" />
+      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio.controllers" />
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.controllers.GraphPageViewControllerTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuggestedTradesPageViewControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="grupo.n.gestaodoterritorio.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="grupo.n.gestaodoterritorio.controllers" />
+      <option name="MAIN_CLASS_NAME" value="grupo.n.gestaodoterritorio.controllers.SuggestedTradesPageViewControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,18 +191,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="controllers in GestaodoTerritorio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GestaodoTerritorio" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED " />
+      <dir value="$PROJECT_DIR$/GestaodoTerritorio/src/test/java/grupo/n/gestaodoterritorio/controllers" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.GestTerrApplication" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.MainViewControllerTest" />
-      <item itemvalue="JUnit.PropertiesLoaderTest" />
+      <item itemvalue="JUnit.AreasPageViewControllerTest" />
+      <item itemvalue="JUnit.SuggestedTradesPageViewControllerTest" />
+      <item itemvalue="JUnit.GraphPageViewControllerTest" />
+      <item itemvalue="JUnit.controllers in GestaodoTerritorio" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainViewControllerTest" />
+        <item itemvalue="JUnit.controllers in GestaodoTerritorio" />
+        <item itemvalue="JUnit.SuggestedTradesPageViewControllerTest" />
+        <item itemvalue="JUnit.AreasPageViewControllerTest" />
         <item itemvalue="Application.GestTerrApplication" />
-        <item itemvalue="JUnit.PropertiesLoaderTest" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GraphPageViewControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +241,8 @@
       <workItem from="1732749633047" duration="27057000" />
       <workItem from="1732890093212" duration="7383000" />
       <workItem from="1732991192840" duration="95359000" />
-      <workItem from="1733408010017" duration="24689000" />
+      <workItem from="1733408010017" duration="37758000" />
+      <workItem from="1733497540760" duration="6329000" />
     </task>
     <servers />
   </component>
@@ -231,8 +257,30 @@
     <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$PropertiesLoaderTest.ic" NAME="PropertiesLoaderTest Coverage Results" MODIFIED="1733324271557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>grupo.n.gestaodoterritorio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$MainViewControllerTest.ic" NAME="MainViewControllerTest Coverage Results" MODIFIED="1733437511359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphPageViewControllerTest_testSelectPropriedadesButton.ic" NAME="GraphPageViewControllerTest.testSelectPropriedadesButton Coverage Results" MODIFIED="1733483150510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphPageViewControllerTest.ic" NAME="GraphPageViewControllerTest Coverage Results" MODIFIED="1733488096334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphPageViewControllerTest_testInitialize.ic" NAME="GraphPageViewControllerTest.testInitialize Coverage Results" MODIFIED="1733479159386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphPageViewControllerTest_testResetButton.ic" NAME="GraphPageViewControllerTest.testResetButton Coverage Results" MODIFIED="1733479866297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$GraphPageViewControllerTest_testSelectProprietariosButton.ic" NAME="GraphPageViewControllerTest.testSelectProprietariosButton Coverage Results" MODIFIED="1733480023337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$SuggestedTradesPageViewControllerTest.ic" NAME="SuggestedTradesPageViewControllerTest Coverage Results" MODIFIED="1733501239291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$MainViewControllerTest.ic" NAME="MainViewControllerTest Coverage Results" MODIFIED="1733477013541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$AreasPageViewControllerTest.ic" NAME="AreasPageViewControllerTest Coverage Results" MODIFIED="1733500403833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>grupo.n.gestaodoterritorio.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ES_2024_1Sem_LETI_GrupoN$controllers_in_GestaodoTerritorio.ic" NAME="controllers in GestaodoTerritorio Coverage Results" MODIFIED="1733503108028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

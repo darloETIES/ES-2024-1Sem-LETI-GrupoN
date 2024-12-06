@@ -103,7 +103,7 @@ public class Graph<V> { // Classe genérica com <V> representando os vértices
             //}
 
             // Salva a imagem no disco
-            File outputFile = new File("GestaodoTerritorio/src/main/images/grafo" + imgName + ".png");
+            File outputFile = new File("GestaodoTerritorio/src/main/resources/images/grafo" + imgName + ".png");
             outputFile.getParentFile().mkdirs();
             ImageIO.write(image, "PNG", outputFile);
 

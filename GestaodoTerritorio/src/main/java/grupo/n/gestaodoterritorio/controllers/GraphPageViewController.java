@@ -94,15 +94,15 @@ public class GraphPageViewController {
     }
 
     // Método para verificar se a imagem existe no diretório /images
-    private boolean imageExists(String imageName) {
-        File imageFile = new File("GestaodoTerritorio/src/main/images/grafo" + imageName + ".png");
+    public boolean imageExists(String imageName) {
+        File imageFile = new File("GestaodoTerritorio/src/main/resources/images/grafo" + imageName + ".png");
         return imageFile.exists();
     }
 
     // Método para carregar ou gerar a imagem
     @FXML
     public void setImage(String imgName) {
-        File imageFile = new File("GestaodoTerritorio/src/main/images/grafo" + imgName + ".png");
+        File imageFile = new File("GestaodoTerritorio/src/main/resources/images/grafo" + imgName + ".png");
         // Verificar se a imagem já existe
         if (!imageExists(imgName)) {
             // Se a imagem não existir, gerar o grafo
@@ -136,7 +136,7 @@ public class GraphPageViewController {
     }
 
     @FXML
-    private void handleReset() {
+    public void handleReset() {
         // Resetando a posição da imagem
         graphImageView.setTranslateX(0);
         graphImageView.setTranslateY(0);
@@ -183,7 +183,7 @@ public class GraphPageViewController {
     }
 
     @FXML
-    private void handleSubmit() {
+    public void handleSubmit() {
         // Definir o nome da imagem com base no botão pressionado
         String imgName = "";
 
@@ -196,4 +196,24 @@ public class GraphPageViewController {
         // Verifique se a imagem já existe ou gere-a
         setImage(imgName);
     }
+
+
+
+    public ToggleButton getBtnPropriedades(){
+        return btnPropriedades;
+    }
+
+    public ToggleButton getBtnProprietarios(){
+        return btnProprietarios;
+    }
+
+    public ImageView getGraphImageView(){
+        return graphImageView;
+    }
+
+    public VBox getNoImageContainer(){
+        return noImageContainer;
+    }
+
+
 }

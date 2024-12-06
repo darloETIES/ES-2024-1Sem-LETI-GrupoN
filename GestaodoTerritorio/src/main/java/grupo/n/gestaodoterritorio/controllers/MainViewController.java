@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -148,7 +147,7 @@ public class MainViewController {
 
     @FXML
     private void loadSuggestedTradesPageView() {
-        loadContent("/grupo/n/gestaodoterritorio/sug_trades_page_view.fxml");
+        loadContent("/grupo/n/gestaodoterritorio/sug-trades-page-view.fxml");
     }
 
     private void loadContent(String fxmlPath) {
