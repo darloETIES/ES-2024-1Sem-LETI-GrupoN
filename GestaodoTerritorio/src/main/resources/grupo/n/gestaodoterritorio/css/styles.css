@@ -1,0 +1,390 @@
+.background-main{
+    -fx-background-color: rgba(50, 50, 50, 0.7);
+}
+
+.upload-file-box{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+}
+
+/* Fundo da ProgressBar */
+.progress-bar {
+    -fx-accent: #dfdfdf; /* Cor da barra de progresso preenchida */
+    -fx-control-inner-background: rgba(255, 255, 255, 0.77); /* Fundo não preenchido */
+    -fx-background-insets: 0; /* Ajusta os espaçamentos internos */
+    -fx-padding: 5; /* Padding ao redor da barra */
+    -fx-border-radius: 10; /* Borda arredondada */
+    -fx-background-radius: 10; /* Fundo arredondado */
+}
+
+/* Para modificar a borda */
+.progress-bar .track {
+    -fx-background-color: rgba(81, 81, 81, 0.63);
+    -fx-background-radius: 10;
+}
+
+.upload-file-box Button{
+    -fx-background-color: rgb(57, 57, 57);
+    -fx-background-radius: 15px;
+    -fx-text-fill: white;
+    -fx-padding: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 0);
+}
+
+.upload-file-box Button:hover{
+    -fx-background-color: rgb(81, 81, 81);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.window-bar{
+    -fx-background-color: #202121;
+    -fx-border-radius: 50px;
+}
+
+.close-btn{
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-border-radius: 30px;
+    -fx-transition: 0.5s ease;
+}
+
+.close-btn:hover{
+    -fx-border-color: #b53030;
+    -fx-background-color: #b53030;
+
+}
+
+.left-menu {
+    -fx-transition: all 0.5s ease-out;
+    -fx-background-color: #202121;
+    -fx-pref-width: 45px;
+    -fx-border-radius: 30px;
+    -fx-padding: 0;
+    -fx-background-clip: padding-box;
+    -fx-background-insets: 0;
+}
+
+.left-menu:hover {
+    -fx-pref-width: 90px;
+}
+
+.menu-text {
+    -fx-transition: opacity 0.5s ease-out;
+    -fx-fill: white;
+    -fx-wrap-text: true;
+    -fx-opacity: 0;
+
+}
+
+.left-menu:hover .menu-text {
+    -fx-opacity: 1;
+    -fx-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+.main-content-panel {
+    -fx-background-color: #3a3c3c;
+}
+
+.menu-item {
+    -fx-transition: 0.5s ease;
+    -fx-border-radius: 30px;
+    -fx-padding: 5px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #5a5a5a;
+}
+
+/* Estilos de graph-page-view */
+/* Estilo do fundo do ScrollPane */
+.graph-viewer-scroll-pane {
+    -fx-background-color: #404040; /* Fundo principal */
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+/* Estilo do fundo da área de visualização */
+.graph-viewer-scroll-pane .viewport {
+    -fx-background-color: #404040; /* Fundo interno */
+}
+
+/* Estilo dos botões de incremento/decremento */
+.graph-viewer-scroll-pane .scroll-bar .increment-button,
+.graph-viewer-scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent; /* Botões invisíveis */
+    -fx-padding: 0;
+    -fx-shape: null; /* Remove a forma padrão */
+}
+
+/* Estilo padrão do botão */
+.graph-viewer-btn {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-insets: 0;
+    -fx-padding: 10px 15px;
+    -fx-min-width: 100px;
+    -fx-font-size: 12px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.graph-viewer-btn:hover {
+    -fx-background-color: #3d3d3d;
+    -fx-background-radius: 20px;
+    -fx-background-insets: 0;
+}
+
+/* Botão selecionado */
+.graph-viewer-btn:selected {
+    -fx-background-color: #4a4a4a;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-background-radius: 20px;
+    -fx-background-insets: 0;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 2);
+}
+
+/* Transição suave entre estados */
+.graph-viewer-btn:selected:hover {
+    -fx-background-color: #5a5a5a;
+    -fx-background-radius: 20px;
+    -fx-background-insets: 0;
+}
+
+/* Ícone dentro dos botões */
+.graph-viewer-btn .fontawesome-icon {
+    -fx-fill: white;
+    -fx-transition: fill 0.3s ease;
+}
+
+/* Ícone no botão selecionado */
+.graph-viewer-btn:selected .fontawesome-icon {
+    -fx-fill: #ffffff;
+}
+
+
+/* Estilo do botão de reset */
+.graph-viewer-reset-btn {
+    -fx-background-color: rgba(37, 37, 37, 0.68);
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 10px 15px;
+    -fx-min-width: 100px;
+    -fx-font-size: 12px;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+/* Estilo do botão de reset ao passar o mouse */
+.graph-viewer-reset-btn:hover {
+    -fx-background-color: rgba(92, 92, 92, 0.71);
+}
+
+/* Definir o botão invisível inicialmente */
+.graph-viewer-reset-btn[visible=false] {
+    -fx-opacity: 0;
+}
+
+.button-container {
+    -fx-alignment: center;
+    -fx-spacing: 15px;
+    -fx-padding: 20px 10px;
+    -fx-background-color: #202121;
+    -fx-border-radius: 10px;
+}
+
+
+/* Estilos para o formulário das áreas geográficas */
+.form-areas {
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #202121;
+    -fx-padding: 7px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 0);
+}
+
+.text-input {
+    -fx-background-color: transparent; /* Fundo transparente */
+    -fx-border-color: #ccc; /* Cor da borda */
+    -fx-border-width: 0 0 1px 0; /* Apenas a borda inferior */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-text-fill: #fff; /* Cor do texto */
+    -fx-padding: 5px 0; /* Espaçamento interno */
+    -fx-prompt-text-fill: #aaa; /* Cor do texto de dica (placeholder) */
+    -fx-background-insets: 0 0 1 0; /* Ajusta o fundo para as bordas */
+}
+
+/* Efeito ao focar no campo */
+.text-input:focused {
+    -fx-border-color: #ffffff; /* Cor de borda ao focar */
+    -fx-border-width: 0 0 2px 0; /* Destaca a borda inferior */
+    -fx-text-fill: #fff; /* Cor do texto */
+    -fx-prompt-text-fill: #666; /* Cor do placeholder ao focar */
+}
+
+/* Campo desabilitado */
+.text-input:disabled {
+    -fx-border-color: #555; /* Cor mais escura para desativado */
+    -fx-prompt-text-fill: #555; /* Placeholder mais discreto */
+}
+
+/* Botão de submissão */
+.form-submit-btn {
+    -fx-background-color: #4a4a4a;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.form-submit-btn:hover {
+    -fx-background-color: #5a5a5a;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0.3, 0, 0);
+}
+
+/* Títulos */
+.form-areas Label {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+}
+
+/* Estilo para o modal */
+.modal-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.7);  /* Cor escura de fundo */
+    -fx-alignment: center;
+    -fx-padding: 50px;
+}
+
+.modal-box {
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #2c2c2c;
+    -fx-padding: 7px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 0);
+    -fx-pref-width: 350px;
+}
+
+.modal-button {
+    -fx-background-color: #191919;
+    -fx-text-fill: white;
+    -fx-padding: 7px 15px;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 100px;
+}
+
+.modal-button:hover {
+    -fx-background-color: #7c7c7c;
+}
+/* Estilo para o título do modal */
+.modal-title-label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 0 0 5px 0;
+}
+
+/* Estilo dos Labels dentro do modal */
+.modal-box Label {
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+
+}
+
+.modal-sub-box{
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #1c1c1c;
+    -fx-padding: 7px;
+
+}
+
+/* Estilo do scroll pane das trocas */
+.trade-list-container{
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #202121;
+    -fx-padding: 7px;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+}
+
+.trade-list-container VBox{
+    -fx-background-color: #202121;
+    -fx-padding: 7px;
+    -fx-text-fill: white;
+}
+
+
+.trade-list-container .scroll-bar:vertical {
+    -fx-background-color: #535353;
+    -fx-pref-width: 12px;
+    -fx-background-radius: 3px;
+}
+
+.trade-list-container .scroll-bar:vertical .thumb {
+    -fx-background-color: #a6a6a6;
+    -fx-background-radius: 5px;
+}
+
+.trade-list-container HBox{
+    -fx-background-radius: 15px;
+    -fx-background-color: #2c2c2c;
+    -fx-padding: 7px;
+    -fx-spacing: 10px;
+
+}
+
+.trade-list-container HBox:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-background-color: #474747;
+    -fx-transition: all 0.3s ease-in-out;
+
+}
+
+.vbox-trade-list {
+    -fx-pref-height: USE_COMPUTED_SIZE;
+    -fx-min-height: USE_COMPUTED_SIZE;
+}
+
+/* Detalhes da troca sugerida */
+.details-panel{
+    -fx-background-color: rgba(14, 14, 14, 0.73);
+
+}
+
+.details-panel Button{
+    -fx-background-color: transparent;
+}
+
+.details-panel Button:hover{
+    -fx-background-color: rgba(96, 96, 96, 0.89);
+    -fx-background-radius: 15px;
+}
+
+
+.sug-trade-details-window{
+    -fx-background-color: rgba(57, 57, 57, 0.95);
+}
+
+.sug-trade-details-sub-box{
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #171717;
+    -fx-padding: 7px;
+    -fx-spacing: 5px;
+}
+
+.sug-trade-details-sub-box-title{
+    -fx-padding: 7px;
+    -fx-spacing: 10px;
+}
